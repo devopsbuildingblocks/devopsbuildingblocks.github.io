@@ -1,18 +1,6 @@
 <div class="post-meta">
   <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
 
-  {{- if eq .Type "guide" }}
-    {{- with .Params.difficulty }}
-    <span class="badge badge-difficulty badge-{{ . }}">{{ . }}</span>
-    {{- end }}
-  {{- end }}
-
-  {{- if eq .Type "article" }}
-    {{- with .Params.tone }}
-    <span class="badge badge-tone badge-{{ . }}">{{ . }}</span>
-    {{- end }}
-  {{- end }}
-
   {{- with .Params.topics }}
   <ul class="topic-pills" aria-label="Topics">
     {{- range . }}

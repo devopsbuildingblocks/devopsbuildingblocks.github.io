@@ -21,7 +21,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.b540d7b94d6dd1fa72dac91a5cdb01c0dd200cad164fe21d13aa3dfe70875d4e.css" integrity="sha256-tUDXuU1t0fpy2skaXNsBwN0gDK0WT&#43;IdE6o9/nCHXU4=">
+<link rel="stylesheet" href="/css/main.min.fdff05d33588367e6210ab9a1a4e9af21e95420cd8c2d82f3e68b189812f741b.css" integrity="sha256-/f8F0zWINn5iEKuaGk6a8h6VQgzYwtgvPmixiYEvdBs=">
 
 
 <link rel="icon" type="image/png" href="/img/db2-logo-square.png">
@@ -54,17 +54,17 @@
   </div>
 </header>
 <main id="main-content">
-<div class="container">
-  <article class="post post--guide">
-    <header class="post-header">
-      <div class="post-header-meta">
-        <a href="/guides/" class="post-back">← Guides</a>
-      </div>
-      <h1 class="post-title">Bootstrapping Argo CD on k3s</h1>
-      <p class="post-desc">A reproducible walkthrough for installing Argo CD on a bare k3s cluster, including the RBAC gotchas nobody documents.</p>
-      <div class="post-meta">
+<div class="container container--guide">
+  <div class="guide-layout">
+    <article class="post post--guide">
+      <header class="post-header">
+        <div class="post-header-meta">
+          <a href="/guides/" class="post-back">← Guides</a>
+        </div>
+        <h1 class="post-title">Bootstrapping Argo CD on k3s</h1>
+        <p class="post-desc">A reproducible walkthrough for installing Argo CD on a bare k3s cluster, including the RBAC gotchas nobody documents.</p>
+        <div class="post-meta">
   <time datetime="2026-04-04">Apr 4, 2026</time>
-    <span class="badge badge-difficulty badge-intermediate">intermediate</span>
   <ul class="topic-pills" aria-label="Topics">
     <li><a href="/topics/argocd/" class="topic-pill">argocd</a></li>
     <li><a href="/topics/kubernetes/" class="topic-pill">kubernetes</a></li>
@@ -72,9 +72,23 @@
   </ul>
 </div>
 
-    </header>
-    <div class="post-body">
-      <h2 id="overview">Overview</h2>
+        
+<div class="post-authors">
+  
+    
+    
+    <div class="post-author-item">
+      <img src="/img/joshuaward.jpg" alt="Joshua Ward" class="post-author-avatar" title="Joshua Ward">
+      <span class="post-author-name">Joshua Ward</span>
+    </div>
+    
+  
+</div>
+
+
+      </header>
+      <div class="post-body">
+        <h2 id="overview">Overview</h2>
 <p>This guide walks through installing Argo CD on a fresh k3s cluster. The official Argo CD docs are good but skip over several pain points you&rsquo;ll hit in a real environment — specifically around RBAC, ingress TLS, and the order-of-operations for initial bootstrap.</p>
 <p>By the end you&rsquo;ll have:</p>
 <ul>
@@ -170,8 +184,37 @@ If you&rsquo;re using a self-signed cert, add <code>--insecure</code> to the <co
 <p><strong>Application stuck in <code>OutOfSync</code> with no changes</strong>
 Check if the repo is private and you haven&rsquo;t added credentials: <code>argocd repo add https://github.com/yourorg/your-repo.git --username &lt;user&gt; --password &lt;token&gt;</code>.</p>
 
-    </div>
-  </article>
+      </div>
+      <footer class="post-footer">
+        
+      </footer>
+    </article>
+    <aside class="guide-toc-sidebar">
+      
+<nav class="toc" aria-label="Table of contents">
+  <h2 class="toc-title">Contents</h2>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#steps">Steps</a>
+      <ul>
+        <li><a href="#step-1-install-the-argo-cd-manifests">Step 1: Install the Argo CD manifests</a></li>
+        <li><a href="#step-2-patch-the-argocd-server-deployment">Step 2: Patch the argocd-server deployment</a></li>
+        <li><a href="#step-3-create-the-ingress">Step 3: Create the Ingress</a></li>
+        <li><a href="#step-4-get-the-initial-admin-password">Step 4: Get the initial admin password</a></li>
+        <li><a href="#step-5-deploy-your-first-application">Step 5: Deploy your first application</a></li>
+      </ul>
+    </li>
+    <li><a href="#verification">Verification</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+  </ul>
+</nav>
+</nav>
+
+
+    </aside>
+  </div>
 </div>
 
   </main><footer class="site-footer">

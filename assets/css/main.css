@@ -818,6 +818,9 @@ tr:last-child td { border-bottom: none; }
 .post--til .post-back:hover     { color: var(--yellow-dark); }
 
 .post-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
   margin-bottom: var(--space-8);
   padding-bottom: var(--space-6);
 }
@@ -825,14 +828,14 @@ tr:last-child td { border-bottom: none; }
 .post--article .post-header { border-bottom: var(--border-thick) solid var(--red); }
 .post--til .post-header     { border-bottom: var(--border-thick) solid var(--yellow-dark); }
 
-.post-header-meta { margin-bottom: var(--space-4); }
+.post-header-meta { margin-bottom: 0; }
 
-.post-title { margin-bottom: var(--space-3); }
+.post-title { margin-bottom: 0; }
 
 .post-desc {
   font-size: 1.1rem;
   color: var(--mid);
-  margin-bottom: var(--space-4);
+  margin-bottom: 0;
   font-style: italic;
 }
 
@@ -1205,7 +1208,7 @@ tr:last-child td { border-bottom: none; }
 /* TOC sidebar at wide viewports */
 @media (min-width: 1024px) {
   .guide-layout {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 1fr 240px;
     gap: var(--space-10);
   }
   .guide-toc-sidebar {

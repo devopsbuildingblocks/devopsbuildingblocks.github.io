@@ -21,7 +21,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.b540d7b94d6dd1fa72dac91a5cdb01c0dd200cad164fe21d13aa3dfe70875d4e.css" integrity="sha256-tUDXuU1t0fpy2skaXNsBwN0gDK0WT&#43;IdE6o9/nCHXU4=">
+<link rel="stylesheet" href="/css/main.min.fdff05d33588367e6210ab9a1a4e9af21e95420cd8c2d82f3e68b189812f741b.css" integrity="sha256-/f8F0zWINn5iEKuaGk6a8h6VQgzYwtgvPmixiYEvdBs=">
 
 
 <link rel="icon" type="image/png" href="/img/db2-logo-square.png">
@@ -71,20 +71,6 @@
   </ul>
 </div>
 
-    </header>
-    <div class="post-body">
-      <p>If your application container is built from a distroless or scratch image, <code>kubectl exec</code> gives you nothing useful — there&rsquo;s no shell to attach to.</p>
-<p><code>kubectl debug</code> solves this by injecting an <em>ephemeral container</em> into the running pod:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl debug -it my-pod <span class="se">\
-</span></span></span><span class="line"><span class="cl">  --image<span class="o">=</span>busybox <span class="se">\
-</span></span></span><span class="line"><span class="cl">  --target<span class="o">=</span>my-app <span class="se">\
-</span></span></span><span class="line"><span class="cl">  -- sh
-</span></span></code></pre></div><p>The <code>--target</code> flag makes the ephemeral container share the process namespace of your app container, so you can inspect its processes, read its filesystem via <code>/proc/&lt;pid&gt;/root</code>, and check its network — all without modifying the original pod spec.</p>
-<p>The ephemeral container disappears when the pod restarts. It&rsquo;s not there permanently.</p>
-<p><strong>Why this tripped me up:</strong> I assumed <code>kubectl debug</code> was just a friendlier alias for <code>kubectl exec</code>. It&rsquo;s not — it creates a new container. That&rsquo;s why it works on distroless images where exec would give you <code>exec /bin/sh: no such file or directory</code>.</p>
-
-    </div>
-    <footer class="post-footer">
       
 <div class="post-authors">
   
@@ -99,7 +85,19 @@
 </div>
 
 
-    </footer>
+    </header>
+    <div class="post-body">
+      <p>If your application container is built from a distroless or scratch image, <code>kubectl exec</code> gives you nothing useful — there&rsquo;s no shell to attach to.</p>
+<p><code>kubectl debug</code> solves this by injecting an <em>ephemeral container</em> into the running pod:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kubectl debug -it my-pod <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --image<span class="o">=</span>busybox <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --target<span class="o">=</span>my-app <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -- sh
+</span></span></code></pre></div><p>The <code>--target</code> flag makes the ephemeral container share the process namespace of your app container, so you can inspect its processes, read its filesystem via <code>/proc/&lt;pid&gt;/root</code>, and check its network — all without modifying the original pod spec.</p>
+<p>The ephemeral container disappears when the pod restarts. It&rsquo;s not there permanently.</p>
+<p><strong>Why this tripped me up:</strong> I assumed <code>kubectl debug</code> was just a friendlier alias for <code>kubectl exec</code>. It&rsquo;s not — it creates a new container. That&rsquo;s why it works on distroless images where exec would give you <code>exec /bin/sh: no such file or directory</code>.</p>
+
+    </div>
   </article>
 </div>
 

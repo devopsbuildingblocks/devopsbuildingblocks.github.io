@@ -2,48 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/topics/argocd/</loc>
+    <loc>https://devopsbuildingblocks.github.io/topics/argocd/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/</loc>
+    <loc>https://devopsbuildingblocks.github.io/articles/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/guides/bootstrapping-argocd-on-k3s/</loc>
+    <loc>https://devopsbuildingblocks.github.io/guides/bootstrapping-argocd-on-k3s/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topics/debugging/</loc>
+    <loc>https://devopsbuildingblocks.github.io/topics/debugging/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://devopsbuildingblocks.github.io/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/guides/</loc>
+    <loc>https://devopsbuildingblocks.github.io/guides/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topics/helm/</loc>
+    <loc>https://devopsbuildingblocks.github.io/topics/helm/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/articles/helm-is-fine-actually/</loc>
+    <loc>https://devopsbuildingblocks.github.io/articles/helm-is-fine-actually/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topics/k3s/</loc>
+    <loc>https://devopsbuildingblocks.github.io/topics/k3s/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topics/kubectl/</loc>
+    <loc>https://devopsbuildingblocks.github.io/topics/kubectl/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/til/kubectl-debug-ephemeral-containers/</loc>
+    <loc>https://devopsbuildingblocks.github.io/til/kubectl-debug-ephemeral-containers/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topics/kubernetes/</loc>
+    <loc>https://devopsbuildingblocks.github.io/topics/kubernetes/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/til/</loc>
+    <loc>https://devopsbuildingblocks.github.io/til/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/topics/</loc>
+    <loc>https://devopsbuildingblocks.github.io/topics/</loc>
     <lastmod>2026-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://devopsbuildingblocks.github.io/about/</loc>
   </url>
 </urlset>

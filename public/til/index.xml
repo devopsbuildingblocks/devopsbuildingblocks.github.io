@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TIL on DevOps Building Blocks</title>
-    <link>http://localhost:1313/til/</link>
+    <link>https://devopsbuildingblocks.github.io/til/</link>
     <description>Recent content in TIL on DevOps Building Blocks</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/til/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://devopsbuildingblocks.github.io/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>kubectl debug uses ephemeral containers, not exec</title>
-      <link>http://localhost:1313/til/kubectl-debug-ephemeral-containers/</link>
+      <link>https://devopsbuildingblocks.github.io/til/kubectl-debug-ephemeral-containers/</link>
       <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/til/kubectl-debug-ephemeral-containers/</guid>
+      <guid>https://devopsbuildingblocks.github.io/til/kubectl-debug-ephemeral-containers/</guid>
       <description>&lt;p&gt;If your application container is built from a distroless or scratch image, &lt;code&gt;kubectl exec&lt;/code&gt; gives you nothing useful — there&amp;rsquo;s no shell to attach to.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;kubectl debug&lt;/code&gt; solves this by injecting an &lt;em&gt;ephemeral container&lt;/em&gt; into the running pod:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl debug -it my-pod &lt;span class=&#34;se&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --image&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;busybox &lt;span class=&#34;se&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --target&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;my-app &lt;span class=&#34;se&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  -- sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;--target&lt;/code&gt; flag makes the ephemeral container share the process namespace of your app container, so you can inspect its processes, read its filesystem via &lt;code&gt;/proc/&amp;lt;pid&amp;gt;/root&lt;/code&gt;, and check its network — all without modifying the original pod spec.&lt;/p&gt;</description>
     </item>
   </channel>
