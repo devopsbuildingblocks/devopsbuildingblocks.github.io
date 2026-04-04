@@ -1,0 +1,16 @@
+<article class="post-card post-card--{{ .Type }}">
+  <div class="post-card-inner">
+    <div class="post-card-header">
+      <span class="post-card-type">{{ .Type }}</span>
+      <h2 class="post-card-title">
+        <a href="{{ .RelPermalink }}" class="post-card-link">{{ .Title }}</a>
+      </h2>
+    </div>
+    {{ with .Description }}
+    <p class="post-card-desc">{{ . }}</p>
+    {{ end }}
+    <footer class="post-card-footer">
+      {{ partial "post-meta.html" . }}
+    </footer>
+  </div>
+</article>

@@ -1,0 +1,13 @@
+{{ with .Params.authors }}
+<div class="post-authors">
+  {{ range . }}
+    {{ $slug := . }}
+    {{ with index hugo.Data.authors $slug }}
+    <div class="post-author-item">
+      <img src="{{ .avatar }}" alt="{{ .name }}" class="post-author-avatar" title="{{ .name }}">
+      <span class="post-author-name">{{ .name }}</span>
+    </div>
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

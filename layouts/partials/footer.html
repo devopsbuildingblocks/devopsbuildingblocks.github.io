@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="{{ .Site.Params.logoRound }}" alt="DB2 logo" class="footer-logo">
+      <p class="footer-tagline">{{ .Site.Params.description }}</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/guides/">Guides</a>
+      <a href="/articles/">Articles</a>
+      <a href="/topics/">Topics</a>
+      <a href="/about/">About</a>
+      <a href="/index.xml" aria-label="RSS feed">RSS</a>
+    </nav>
+    <p class="footer-copy">&copy; {{ now.Year }} {{ .Site.Params.author }}</p>
+  </div>
+</footer>
