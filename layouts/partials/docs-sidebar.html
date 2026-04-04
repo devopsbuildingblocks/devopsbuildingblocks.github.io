@@ -1,0 +1,11 @@
+{{- $page := . -}}
+{{- $docsSection := site.GetPage "/docs" -}}
+
+<nav class="docs-nav" aria-label="Documentation navigation">
+  <a href="/docs/" class="docs-nav-home{{ if eq $page $docsSection }} is-active{{ end }}">
+    <span>Documentation</span>
+  </a>
+  <div class="docs-tree">
+    {{- partial "docs-tree.html" (dict "section" $docsSection "current" $page) -}}
+  </div>
+</nav>

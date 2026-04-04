@@ -7,7 +7,7 @@
       <h1 class="hero-title">DevOps Building Blocks</h1>
       <p class="hero-tagline">{{ .Site.Params.description }}</p>
       <div class="hero-ctas">
-        <a href="/guides/" class="cta cta--guide">Guides</a>
+        <a href="/docs/" class="cta cta--docs">Docs</a>
         <a href="/articles/" class="cta cta--article">Articles</a>
         <a href="/til/" class="cta cta--til">TIL</a>
       </div>
@@ -22,10 +22,10 @@
       <span class="section-eyebrow-line"></span>
     </div>
     <div class="post-grid">
-      {{ $guides   := where .Site.RegularPages "Type" "guide" }}
+      {{ $docs     := where .Site.RegularPages "Type" "docs" }}
       {{ $articles := where .Site.RegularPages "Type" "article" }}
       {{ $til      := where .Site.RegularPages "Type" "til" }}
-      {{ $recent   := union $guides $articles | union $til | first 6 }}
+      {{ $recent   := union $docs $articles | union $til | first 6 }}
       {{ range $recent }}
         {{ partial "post-card.html" . }}
       {{ end }}

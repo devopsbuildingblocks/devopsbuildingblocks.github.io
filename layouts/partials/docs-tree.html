@@ -1,0 +1,19 @@
+{{- $section := .section -}}
+{{- $current := .current -}}
+<ul class="docs-tree-list">
+  {{- range $section.Pages.ByWeight -}}
+    {{- if .IsSection -}}
+      {{- $isOpen := or (eq $current .) ($current.IsDescendant .) -}}
+      <li class="docs-tree-item docs-tree-item--section">
+        <details{{ if $isOpen }} open{{ end }}>
+          <summary class="docs-tree-section-label">{{ .Title }}</summary>
+          {{- partial "docs-tree.html" (dict "section" . "current" $current) -}}
+        </details>
+      </li>
+    {{- else -}}
+      <li class="docs-tree-item docs-tree-item--page{{ if eq $current . }} is-active{{ end }}">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
+    {{- end -}}
+  {{- end -}}
+</ul>

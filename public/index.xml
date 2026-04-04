@@ -1,40 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>DevOps Building Blocks</title>
-    <link>https://devopsbuildingblocks.github.io/</link>
-    <description>Recent content on DevOps Building Blocks</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://devopsbuildingblocks.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Bootstrapping Argo CD on k3s</title>
-      <link>https://devopsbuildingblocks.github.io/guides/bootstrapping-argocd-on-k3s/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://devopsbuildingblocks.github.io/guides/bootstrapping-argocd-on-k3s/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This guide walks through installing Argo CD on a fresh k3s cluster. The official Argo CD docs are good but skip over several pain points you&amp;rsquo;ll hit in a real environment — specifically around RBAC, ingress TLS, and the order-of-operations for initial bootstrap.&lt;/p&gt;&#xA;&lt;p&gt;By the end you&amp;rsquo;ll have:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Argo CD running and accessible via HTTPS&lt;/li&gt;&#xA;&lt;li&gt;An admin password changed from the default&lt;/li&gt;&#xA;&lt;li&gt;A first application deployed via GitOps&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Time to complete:&lt;/strong&gt; ~30 minutes on a fresh cluster.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Helm Is Fine, Actually</title>
-      <link>https://devopsbuildingblocks.github.io/articles/helm-is-fine-actually/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://devopsbuildingblocks.github.io/articles/helm-is-fine-actually/</guid>
-      <description>&lt;p&gt;Let me get something off my chest: the Helm pile-on is boring.&lt;/p&gt;&#xA;&lt;p&gt;Every few months someone posts &amp;ldquo;Why I stopped using Helm&amp;rdquo; and it gets passed around like a revelation. The criticisms are almost always the same: templating is ugly, debugging is painful, values files proliferate, upgrades are scary. These are all real. They are also mostly problems you bring on yourself.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-actual-complaints&#34;&gt;The actual complaints&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;YAML templating with Go templates is a nightmare.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>kubectl debug uses ephemeral containers, not exec</title>
-      <link>https://devopsbuildingblocks.github.io/til/kubectl-debug-ephemeral-containers/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://devopsbuildingblocks.github.io/til/kubectl-debug-ephemeral-containers/</guid>
-      <description>&lt;p&gt;If your application container is built from a distroless or scratch image, &lt;code&gt;kubectl exec&lt;/code&gt; gives you nothing useful — there&amp;rsquo;s no shell to attach to.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;kubectl debug&lt;/code&gt; solves this by injecting an &lt;em&gt;ephemeral container&lt;/em&gt; into the running pod:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl debug -it my-pod &lt;span class=&#34;se&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --image&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;busybox &lt;span class=&#34;se&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --target&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;my-app &lt;span class=&#34;se&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  -- sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;--target&lt;/code&gt; flag makes the ephemeral container share the process namespace of your app container, so you can inspect its processes, read its filesystem via &lt;code&gt;/proc/&amp;lt;pid&amp;gt;/root&lt;/code&gt;, and check its network — all without modifying the original pod spec.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About</title>
-      <link>https://devopsbuildingblocks.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://devopsbuildingblocks.github.io/about/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m Joshua Ward — a DevOps practitioner who spends a lot of time in the gap between &amp;ldquo;the docs say it works&amp;rdquo; and &amp;ldquo;it actually works in prod.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;This site is where I document that gap. Some posts are structured guides I wish had existed when I was figuring something out. Others are articles where I share more unfiltered thoughts about tools, tradeoffs, and the industry.&lt;/p&gt;&#xA;&lt;p&gt;If something here saved you time or made you think differently about a problem, that&amp;rsquo;s the whole point.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps Building Blocks</title><link>https://devopsbuildingblocks.github.io/</link><description>Recent content on DevOps Building Blocks</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://devopsbuildingblocks.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Bootstrapping Argo CD on k3s</title><link>https://devopsbuildingblocks.github.io/docs/kubernetes/getting-started/argocd-on-k3s/</link><pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate><guid>https://devopsbuildingblocks.github.io/docs/kubernetes/getting-started/argocd-on-k3s/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This guide walks through installing Argo CD on a fresh k3s cluster. The official Argo CD docs are good but skip over several pain points you&amp;rsquo;ll hit in a real environment — specifically around RBAC, ingress TLS, and the order-of-operations for initial bootstrap.&lt;/p&gt;
+&lt;p&gt;By the end you&amp;rsquo;ll have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Argo CD running and accessible via HTTPS&lt;/li&gt;
+&lt;li&gt;An admin password changed from the default&lt;/li&gt;
+&lt;li&gt;A first application deployed via GitOps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Time to complete:&lt;/strong&gt; ~30 minutes on a fresh cluster.&lt;/p&gt;</description></item><item><title>Helm Is Fine, Actually</title><link>https://devopsbuildingblocks.github.io/articles/helm-is-fine-actually/</link><pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate><guid>https://devopsbuildingblocks.github.io/articles/helm-is-fine-actually/</guid><description>&lt;p&gt;Let me get something off my chest: the Helm pile-on is boring.&lt;/p&gt;
+&lt;p&gt;Every few months someone posts &amp;ldquo;Why I stopped using Helm&amp;rdquo; and it gets passed around like a revelation. The criticisms are almost always the same: templating is ugly, debugging is painful, values files proliferate, upgrades are scary. These are all real. They are also mostly problems you bring on yourself.&lt;/p&gt;
+&lt;h2 id="the-actual-complaints"&gt;The actual complaints&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;YAML templating with Go templates is a nightmare.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>kubectl debug uses ephemeral containers, not exec</title><link>https://devopsbuildingblocks.github.io/til/kubectl-debug-ephemeral-containers/</link><pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate><guid>https://devopsbuildingblocks.github.io/til/kubectl-debug-ephemeral-containers/</guid><description>&lt;p&gt;If your application container is built from a distroless or scratch image, &lt;code&gt;kubectl exec&lt;/code&gt; gives you nothing useful — there&amp;rsquo;s no shell to attach to.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kubectl debug&lt;/code&gt; solves this by injecting an &lt;em&gt;ephemeral container&lt;/em&gt; into the running pod:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl debug -it my-pod &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --image&lt;span class="o"&gt;=&lt;/span&gt;busybox &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --target&lt;span class="o"&gt;=&lt;/span&gt;my-app &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -- sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;--target&lt;/code&gt; flag makes the ephemeral container share the process namespace of your app container, so you can inspect its processes, read its filesystem via &lt;code&gt;/proc/&amp;lt;pid&amp;gt;/root&lt;/code&gt;, and check its network — all without modifying the original pod spec.&lt;/p&gt;</description></item><item><title>About</title><link>https://devopsbuildingblocks.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://devopsbuildingblocks.github.io/about/</guid><description>&lt;p&gt;I&amp;rsquo;m Joshua Ward — a DevOps practitioner who spends a lot of time in the gap between &amp;ldquo;the docs say it works&amp;rdquo; and &amp;ldquo;it actually works in prod.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;This site is where I document that gap. Some posts are structured guides I wish had existed when I was figuring something out. Others are articles where I share more unfiltered thoughts about tools, tradeoffs, and the industry.&lt;/p&gt;
+&lt;p&gt;If something here saved you time or made you think differently about a problem, that&amp;rsquo;s the whole point.&lt;/p&gt;</description></item></channel></rss>
