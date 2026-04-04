@@ -1,0 +1,35 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-blocks" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <img src="{{ .Site.Params.logoRound }}" alt="DevOps Building Blocks logo" class="hero-logo">
+    <div class="hero-text">
+      <h1 class="hero-title">DevOps Building Blocks</h1>
+      <p class="hero-tagline">{{ .Site.Params.description }}</p>
+      <div class="hero-ctas">
+        <a href="/guides/" class="cta cta--guide">Guides</a>
+        <a href="/articles/" class="cta cta--article">Articles</a>
+        <a href="/til/" class="cta cta--til">TIL</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="recent-posts">
+  <div class="recent-posts-inner">
+    <div class="section-eyebrow">
+      <span class="section-title">Recent Posts</span>
+      <span class="section-eyebrow-line"></span>
+    </div>
+    <div class="post-grid">
+      {{ $guides   := where .Site.RegularPages "Type" "guide" }}
+      {{ $articles := where .Site.RegularPages "Type" "article" }}
+      {{ $til      := where .Site.RegularPages "Type" "til" }}
+      {{ $recent   := union $guides $articles | union $til | first 6 }}
+      {{ range $recent }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

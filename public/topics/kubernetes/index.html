@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Guides, articles, and hard-won lessons from the DevOps trenches.">
+
+<title>Kubernetes · DevOps Building Blocks</title>
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kubernetes">
+<meta property="og:description" content="Guides, articles, and hard-won lessons from the DevOps trenches.">
+<meta property="og:url" content="http://localhost:1313/topics/kubernetes/">
+<meta property="og:site_name" content="DevOps Building Blocks">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/main.min.b540d7b94d6dd1fa72dac91a5cdb01c0dd200cad164fe21d13aa3dfe70875d4e.css" integrity="sha256-tUDXuU1t0fpy2skaXNsBwN0gDK0WT&#43;IdE6o9/nCHXU4=">
+
+
+<link rel="icon" type="image/png" href="/img/db2-logo-square.png">
+
+
+
+
+<script src="/js/blocks.min.ca882d94c0021cd10a4803a77b286e30c6d3fdeb4b95ae524fb01108a428c442.js" defer integrity="sha256-yogtlMACHNEKSAOneyhuMMbT/etLla5ST7ARCKQoxEI="></script>
+</head>
+<body class="page-term type-topics">
+  <div class="site-bg-blocks" aria-hidden="true"></div><header class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="DevOps Building Blocks">
+      <img src="/img/db2-logo-square.png" alt="DB2 logo" class="nav-logo">
+      <span class="nav-title">DevOps Building Blocks</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/til/">TIL</a></li>
+        <li><a href="/topics/" aria-current="page">Topics</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+<div class="container">
+  <header class="section-header section-header--topics">
+    <h1>Kubernetes</h1>
+    
+  </header>
+  <div class="post-grid">
+    
+      <article class="post-card post-card--guide">
+  <div class="post-card-inner">
+    <div class="post-card-header">
+      <span class="post-card-type">guide</span>
+      <h2 class="post-card-title">
+        <a href="/guides/bootstrapping-argocd-on-k3s/" class="post-card-link">Bootstrapping Argo CD on k3s</a>
+      </h2>
+    </div>
+    
+    <p class="post-card-desc">A reproducible walkthrough for installing Argo CD on a bare k3s cluster, including the RBAC gotchas nobody documents.</p>
+    
+    <footer class="post-card-footer">
+      <div class="post-meta">
+  <time datetime="2026-04-04">Apr 4, 2026</time>
+    <span class="badge badge-difficulty badge-intermediate">intermediate</span>
+  <ul class="topic-pills" aria-label="Topics">
+    <li><a href="/topics/argocd/" class="topic-pill">argocd</a></li>
+    <li><a href="/topics/kubernetes/" class="topic-pill">kubernetes</a></li>
+    <li><a href="/topics/k3s/" class="topic-pill">k3s</a></li>
+  </ul>
+</div>
+
+    </footer>
+  </div>
+</article>
+
+    
+      <article class="post-card post-card--article">
+  <div class="post-card-inner">
+    <div class="post-card-header">
+      <span class="post-card-type">article</span>
+      <h2 class="post-card-title">
+        <a href="/articles/helm-is-fine-actually/" class="post-card-link">Helm Is Fine, Actually</a>
+      </h2>
+    </div>
+    
+    <p class="post-card-desc">The Helm criticism you see online is mostly from people who haven&#39;t read the docs or who hit a paper cut and wrote a blog post about it.</p>
+    
+    <footer class="post-card-footer">
+      <div class="post-meta">
+  <time datetime="2026-04-04">Apr 4, 2026</time>
+    <span class="badge badge-tone badge-informal">informal</span>
+  <ul class="topic-pills" aria-label="Topics">
+    <li><a href="/topics/helm/" class="topic-pill">helm</a></li>
+    <li><a href="/topics/kubernetes/" class="topic-pill">kubernetes</a></li>
+  </ul>
+</div>
+
+    </footer>
+  </div>
+</article>
+
+    
+      <article class="post-card post-card--til">
+  <div class="post-card-inner">
+    <div class="post-card-header">
+      <span class="post-card-type">til</span>
+      <h2 class="post-card-title">
+        <a href="/til/kubectl-debug-ephemeral-containers/" class="post-card-link">kubectl debug uses ephemeral containers, not exec</a>
+      </h2>
+    </div>
+    
+    <p class="post-card-desc">kubectl debug injects a fresh container into a running pod — it doesn&#39;t exec into the existing one. This matters when your app container has no shell.</p>
+    
+    <footer class="post-card-footer">
+      <div class="post-meta">
+  <time datetime="2026-04-04">Apr 4, 2026</time>
+  <ul class="topic-pills" aria-label="Topics">
+    <li><a href="/topics/kubernetes/" class="topic-pill">kubernetes</a></li>
+    <li><a href="/topics/kubectl/" class="topic-pill">kubectl</a></li>
+    <li><a href="/topics/debugging/" class="topic-pill">debugging</a></li>
+  </ul>
+</div>
+
+    </footer>
+  </div>
+</article>
+
+    
+  </div>
+</div>
+
+  </main><footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/img/db2-logo-round.png" alt="DB2 logo" class="footer-logo">
+      <p class="footer-tagline">Guides, articles, and hard-won lessons from the DevOps trenches.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/guides/">Guides</a>
+      <a href="/articles/">Articles</a>
+      <a href="/topics/">Topics</a>
+      <a href="/about/">About</a>
+      <a href="/index.xml" aria-label="RSS feed">RSS</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Joshua Ward</p>
+  </div>
+</footer>
+</body>
+</html>

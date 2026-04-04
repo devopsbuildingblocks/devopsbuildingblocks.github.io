@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Helm criticism you see online is mostly from people who haven&#39;t read the docs or who hit a paper cut and wrote a blog post about it.">
+
+<title>Helm Is Fine, Actually · DevOps Building Blocks</title>
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Helm Is Fine, Actually">
+<meta property="og:description" content="The Helm criticism you see online is mostly from people who haven&#39;t read the docs or who hit a paper cut and wrote a blog post about it.">
+<meta property="og:url" content="http://localhost:1313/articles/helm-is-fine-actually/">
+<meta property="og:site_name" content="DevOps Building Blocks">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/main.min.b540d7b94d6dd1fa72dac91a5cdb01c0dd200cad164fe21d13aa3dfe70875d4e.css" integrity="sha256-tUDXuU1t0fpy2skaXNsBwN0gDK0WT&#43;IdE6o9/nCHXU4=">
+
+
+<link rel="icon" type="image/png" href="/img/db2-logo-square.png">
+
+
+  
+  <meta name="keywords" content="helm, kubernetes">
+  
+
+
+
+<script src="/js/blocks.min.ca882d94c0021cd10a4803a77b286e30c6d3fdeb4b95ae524fb01108a428c442.js" defer integrity="sha256-yogtlMACHNEKSAOneyhuMMbT/etLla5ST7ARCKQoxEI="></script>
+</head>
+<body class="page-page type-article">
+  <div class="site-bg-blocks" aria-hidden="true"></div><header class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="DevOps Building Blocks">
+      <img src="/img/db2-logo-square.png" alt="DB2 logo" class="nav-logo">
+      <span class="nav-title">DevOps Building Blocks</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/articles/" aria-current="page">Articles</a></li>
+        <li><a href="/til/">TIL</a></li>
+        <li><a href="/topics/">Topics</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+<div class="container">
+  <article class="post post--article">
+    <header class="post-header">
+      <div class="post-header-meta">
+        <a href="/articles/" class="post-back">← Articles</a>
+      </div>
+      <h1 class="post-title">Helm Is Fine, Actually</h1>
+      <p class="post-desc">The Helm criticism you see online is mostly from people who haven&#39;t read the docs or who hit a paper cut and wrote a blog post about it.</p>
+      <div class="post-meta">
+  <time datetime="2026-04-04">Apr 4, 2026</time>
+    <span class="badge badge-tone badge-informal">informal</span>
+  <ul class="topic-pills" aria-label="Topics">
+    <li><a href="/topics/helm/" class="topic-pill">helm</a></li>
+    <li><a href="/topics/kubernetes/" class="topic-pill">kubernetes</a></li>
+  </ul>
+</div>
+
+    </header>
+    <div class="post-body">
+      <p>Let me get something off my chest: the Helm pile-on is boring.</p>
+<p>Every few months someone posts &ldquo;Why I stopped using Helm&rdquo; and it gets passed around like a revelation. The criticisms are almost always the same: templating is ugly, debugging is painful, values files proliferate, upgrades are scary. These are all real. They are also mostly problems you bring on yourself.</p>
+<h2 id="the-actual-complaints">The actual complaints</h2>
+<p><strong>&ldquo;YAML templating with Go templates is a nightmare.&rdquo;</strong></p>
+<p>Yes. It&rsquo;s not pretty. But I&rsquo;ve never met a Helm chart that was harder to debug than a kustomize overlay that&rsquo;s six levels of patches deep. The ugliness is visible. With kustomize, the magic is hidden — you find out something is wrong when the wrong thing is in the cluster.</p>
+<p><strong>&ldquo;Values files get out of hand.&rdquo;</strong></p>
+<p>This is a team process problem, not a Helm problem. If you have 47 <code>values-*.yaml</code> files and nobody knows which one applies in which environment, that&rsquo;s a discipline problem. Helm gives you the tools. It doesn&rsquo;t enforce the discipline.</p>
+<p><strong>&ldquo;Helm upgrades are scary.&rdquo;</strong></p>
+<p>This one I&rsquo;ll grant you partially. The three-way strategic merge thing is genuinely confusing, and <code>helm upgrade</code> has footguns. But the alternative is often &ldquo;we just kubectl apply things directly and hope&rdquo; — which is far scarier.</p>
+<h2 id="what-i-think-is-actually-happening">What I think is actually happening</h2>
+<p>A lot of the Helm discourse comes from people who hit a rough edge early and never came back. The docs have improved substantially. The <code>--dry-run</code> and <code>--debug</code> flags will show you exactly what&rsquo;s being rendered. <code>helm template</code> exists. <code>helm diff</code> (via plugin) is excellent.</p>
+<p>The tooling has matured. The mental model is learnable. And critically — it&rsquo;s the tool your colleagues have already used. When you replace it with a custom solution, you&rsquo;re paying the learning curve for everyone.</p>
+<h2 id="the-exception">The exception</h2>
+<p>If you&rsquo;re building a platform that distributes software to other teams or customers, yes — Helm&rsquo;s templating model starts to buckle under real customization pressure. That&rsquo;s what operators and OLM and similar tools are for.</p>
+<p>For 90% of use cases, including most internal platform engineering work: Helm is fine. You don&rsquo;t need to fix it.</p>
+
+    </div>
+  </article>
+</div>
+
+  </main><footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/img/db2-logo-round.png" alt="DB2 logo" class="footer-logo">
+      <p class="footer-tagline">Guides, articles, and hard-won lessons from the DevOps trenches.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/guides/">Guides</a>
+      <a href="/articles/">Articles</a>
+      <a href="/topics/">Topics</a>
+      <a href="/about/">About</a>
+      <a href="/index.xml" aria-label="RSS feed">RSS</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Joshua Ward</p>
+  </div>
+</footer>
+</body>
+</html>
