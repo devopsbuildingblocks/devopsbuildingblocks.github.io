@@ -788,7 +788,7 @@ tr:last-child td { border-bottom: none; }
   12. Article Post Layout
    -------------------------------------------------------------------------- */
 .post--article {
-  background: var(--cream);
+  background: var(--white);
   border-top: var(--border-thick) solid var(--red);
   box-shadow: var(--shadow-card-hover);
   padding: var(--space-8);
@@ -799,7 +799,7 @@ tr:last-child td { border-bottom: none; }
 
 /* TIL post layout */
 .post--til {
-  background: var(--yellow-light);
+  background: var(--white);
   border-top: var(--border-thick) solid var(--yellow);
   box-shadow: var(--shadow-card-hover);
   padding: var(--space-8);
@@ -1372,6 +1372,52 @@ details[open] > .docs-tree-section-label {
   background: var(--light-blue);
   color: var(--blue);
   font-weight: 600;
+}
+
+/* --- Docs section-page header banner --- */
+
+.post-header--docs-section {
+  background: var(--hero-bg);
+  background-image: radial-gradient(ellipse at 75% 50%, rgba(43,90,183,0.45) 0%, transparent 65%);
+  border-bottom: var(--border-thick) solid var(--blue) !important;
+  margin: calc(-1 * var(--space-8)) calc(-1 * var(--space-10)) var(--space-8);
+  padding: var(--space-8) var(--space-10);
+  overflow: hidden;
+  position: relative;
+}
+
+.post-header--docs-section::before,
+.post-header--docs-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 4px;
+  opacity: 0.12;
+}
+
+.post-header--docs-section::before {
+  width: 120px;
+  height: 120px;
+  background: var(--blue);
+  right: 60px;
+  top: -30px;
+  transform: rotate(20deg);
+}
+
+.post-header--docs-section::after {
+  width: 60px;
+  height: 60px;
+  background: var(--yellow);
+  right: 20px;
+  bottom: -20px;
+  transform: rotate(-10deg);
+}
+
+.post-header--docs-section .post-title {
+  color: var(--white);
+}
+
+.post-header--docs-section .post-desc {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* --- Breadcrumbs --- */
