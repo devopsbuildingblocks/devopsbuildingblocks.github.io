@@ -1,12 +1,12 @@
 <header class="site-nav">
   <div class="nav-inner">
     <a href="/" class="nav-brand" aria-label="{{ .Site.Title }}">
-      <img src="{{ .Site.Params.logoSquare }}" alt="DB2 logo" class="nav-logo">
+      <img src="{{ .Site.Params.logoRound }}" alt="DB2 logo" class="nav-logo">
       <span class="nav-title">DevOps Building Blocks</span>
     </a>
     <nav aria-label="Main navigation">
       <ul class="nav-links">
-        <li><a href="/guides/"{{ if hasPrefix .RelPermalink "/guides" }} aria-current="page"{{ end }}>Guides</a></li>
+        <li><a href="/docs/"{{ if hasPrefix .RelPermalink "/docs" }} aria-current="page"{{ end }}>Docs</a></li>
         <li><a href="/articles/"{{ if hasPrefix .RelPermalink "/articles" }} aria-current="page"{{ end }}>Articles</a></li>
         <li><a href="/til/"{{ if hasPrefix .RelPermalink "/til" }} aria-current="page"{{ end }}>TIL</a></li>
         <li><a href="/topics/"{{ if hasPrefix .RelPermalink "/topics" }} aria-current="page"{{ end }}>Topics</a></li>

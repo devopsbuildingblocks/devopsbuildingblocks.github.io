@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="docs-outer">
+  <aside class="docs-sidebar-col">
+    {{ partial "docs-sidebar.html" . }}
+  </aside>
+  <div class="docs-main-col">
+    {{ partial "docs-breadcrumbs.html" . }}
+    <article class="post post--docs">
+      <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{ with .Description }}<p class="post-desc">{{ . }}</p>{{ end }}
+        {{ partial "post-meta.html" . }}
+        {{ partial "post-authors.html" . }}
+      </header>
+      <div class="post-body">
+        {{ .Content }}
+      </div>
+      {{ if or .PrevInSection .NextInSection }}
+      <nav class="docs-prevnext" aria-label="Page navigation">
+        <div class="docs-prevnext-inner">
+          {{ with .PrevInSection }}
+          <a href="{{ .RelPermalink }}" class="docs-prevnext-btn docs-prevnext-btn--prev">
+            <span class="docs-prevnext-dir">← Previous</span>
+            <span class="docs-prevnext-title">{{ .Title }}</span>
+          </a>
+          {{ else }}
+          <div></div>
+          {{ end }}
+          {{ with .NextInSection }}
+          <a href="{{ .RelPermalink }}" class="docs-prevnext-btn docs-prevnext-btn--next">
+            <span class="docs-prevnext-dir">Next →</span>
+            <span class="docs-prevnext-title">{{ .Title }}</span>
+          </a>
+          {{ end }}
+        </div>
+      </nav>
+      {{ end }}
+    </article>
+  </div>
+  <aside class="docs-toc-col">
+    {{ if .TableOfContents }}
+    <nav class="toc" aria-label="Table of contents">
+      <h2 class="toc-title">Contents</h2>
+      {{ .TableOfContents }}
+    </nav>
+    {{ end }}
+  </aside>
+</div>
+{{ end }}
