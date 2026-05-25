@@ -36,7 +36,7 @@ The `db2` theme requires a Nerd Font. The `.minimal` variants work in any termin
 
 ## Using built-in oh-my-posh themes
 
-Any theme name from the [oh-my-posh theme gallery](https://ohmyposh.dev/docs/themes) can be used — it will be fetched from GitHub at install time:
+Any theme name from the [oh-my-posh theme gallery](https://ohmyposh.dev/docs/themes) will be fetched from GitHub at install time:
 
 ```json
 "ghcr.io/devopsbuildingblocks/devcontainer-features/oh-my-posh:0": {

@@ -28,6 +28,6 @@ type: docs
 
 ## Requirements
 
-Your terminal emulator must have a [Nerd Font](https://www.nerdfonts.com/) configured — otherwise icons render as boxes or question marks. This is a terminal setting, not a container setting. Popular options: JetBrainsMono Nerd Font, FiraCode Nerd Font, MesloLGS NF.
+Your terminal emulator must have a [Nerd Font](https://www.nerdfonts.com/) configured, otherwise icons render as boxes or question marks. This is a terminal setting, not a container setting. Popular options: JetBrainsMono Nerd Font, FiraCode Nerd Font, MesloLGS NF.
 
 VS Code: set `"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font"` (or your preferred Nerd Font) in your user settings.

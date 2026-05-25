@@ -26,4 +26,4 @@ type: docs
 
 ## Notes
 
-k9s requires a valid `KUBECONFIG` or `~/.kube/config` to connect to a cluster. The feature only installs the binary and configures the theme — kubeconfig management is left to your project's dev container setup.
+k9s requires a valid `KUBECONFIG` or `~/.kube/config` to connect to a cluster. The feature only installs the binary and configures the theme. Kubeconfig management is left to your project's dev container setup.

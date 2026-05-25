@@ -3,20 +3,20 @@ title: "Hosting a Static Site on GitHub Pages with a Custom Domain"
 date: 2026-05-01
 draft: false
 type: article
-description: "GitHub Pages is genuinely good free hosting for static sites. Here's the full setup — repo config, DNS records, HTTPS enforcement, and where it trips people up."
+description: "GitHub Pages is genuinely good free hosting for static sites. Here's the full setup: repo config, DNS records, HTTPS enforcement, and where it trips people up."
 topics: ["github", "dns", "static-sites"]
 tone: informal
 authors: ["joshua-ward"]
 ---
 
-GitHub Pages is free, reliable, and pairs well with any static site generator. It's what powers this site — devopsbuildingblocks.github.io runs on Hugo built and deployed via GitHub Actions, served by Pages on a custom domain. The setup is straightforward but there are a few spots where things go wrong silently if you don't know what to look for.
+GitHub Pages is free, reliable, and pairs well with any static site generator. It's what powers this site. devopsbuildingblocks.github.io runs on Hugo built and deployed via GitHub Actions, served by Pages on a custom domain. The setup is straightforward but there are a few spots where things go wrong silently if you don't know what to look for.
 
 ## What you're setting up
 
 GitHub Pages can serve your site from two places:
 
-- **`github.io` subdomain** — free, automatic, works immediately. Format is `<org>.github.io` or `<user>.github.io` for your account's root site, or `<org>.github.io/<repo>` for project sites.
-- **Custom domain** — you bring a domain you own, point DNS at GitHub's servers, and Pages handles the rest including HTTPS via Let's Encrypt.
+- **`github.io` subdomain**: free, automatic, works immediately. Format is `<org>.github.io` or `<user>.github.io` for your account's root site, or `<org>.github.io/<repo>` for project sites.
+- **Custom domain**: you bring a domain you own, point DNS at GitHub's servers, and Pages handles the rest including HTTPS via Let's Encrypt.
 
 This article covers the custom domain path.
 
@@ -24,13 +24,13 @@ This article covers the custom domain path.
 
 In your repository, go to **Settings → Pages**.
 
-Under **Source**, select **GitHub Actions**. This is the modern approach — you control the build and push the artifact yourself rather than letting GitHub pick a branch. If your repo is on a free plan, the repository needs to be public.
+Under **Source**, select **GitHub Actions**. This is the modern approach. You control the build and push the artifact yourself rather than letting GitHub pick a branch. If your repo is on a free plan, the repository needs to be public.
 
 If you're using a static site generator like Hugo, Jekyll, or Astro, you'll wire this up with a workflow file. More on that below.
 
 ## Step 2: Add a custom domain
 
-Still in **Settings → Pages**, enter your domain in the **Custom domain** field and click Save. GitHub will immediately try to verify DNS — it'll fail at this point because you haven't added the DNS records yet. That's fine, continue.
+Still in **Settings → Pages**, enter your domain in the **Custom domain** field and click Save. GitHub will immediately try to verify DNS. It'll fail at this point because you haven't added the DNS records yet. That's fine, continue.
 
 GitHub will also create a `CNAME` file in your repository root containing your domain. If you're using GitHub Actions to deploy, make sure your build process includes this file in the published output, otherwise Pages will keep forgetting your custom domain on every deploy.
 
@@ -87,7 +87,7 @@ dig www.example.com +short
 
 ## Step 4: Verify DNS in GitHub
 
-Go back to **Settings → Pages** and click **Check DNS configuration** (or wait — it checks automatically every few minutes). Once GitHub sees the records resolving correctly, the custom domain field will show a green checkmark.
+Go back to **Settings → Pages** and click **Check DNS configuration** (or wait; it checks automatically every few minutes). Once GitHub sees the records resolving correctly, the custom domain field will show a green checkmark.
 
 At this point GitHub will also start issuing a TLS certificate via Let's Encrypt. This usually takes under 10 minutes.
 
@@ -96,7 +96,7 @@ At this point GitHub will also start issuing a TLS certificate via Let's Encrypt
 Once the certificate is issued, the **Enforce HTTPS** checkbox becomes available. Check it. This redirects all `http://` traffic to `https://` and there's no good reason not to enable it.
 
 {{< callout type="warning" >}}
-HTTPS enforcement only becomes available after the certificate is provisioned. If the checkbox is greyed out, the cert hasn't finished issuing yet — wait a few minutes and refresh.
+HTTPS enforcement only becomes available after the certificate is provisioned. If the checkbox is greyed out, the cert hasn't finished issuing yet. Wait a few minutes and refresh.
 {{< /callout >}}
 
 ## Deploying with GitHub Actions
@@ -146,7 +146,7 @@ jobs:
         id: deployment
 ```
 
-The `upload-pages-artifact` action packages your build output and the `deploy-pages` action pushes it to Pages. The `permissions` block is required — Pages deployment uses OIDC tokens, not a PAT.
+The `upload-pages-artifact` action packages your build output and the `deploy-pages` action pushes it to Pages. The `permissions` block is required. Pages deployment uses OIDC tokens, not a PAT.
 
 ## Common problems
 
@@ -170,10 +170,10 @@ Make sure you added both the apex `A` records and the `www` CNAME. GitHub Pages 
 
 **404 on every page except the root**
 
-Your static site generator is producing URLs like `/about/` but the `index.html` files aren't where Pages expects them. Check that your build output has `public/about/index.html`, not `public/about.html` — Pages handles trailing-slash URLs correctly when the files exist.
+Your static site generator is producing URLs like `/about/` but the `index.html` files aren't where Pages expects them. Check that your build output has `public/about/index.html`, not `public/about.html`. Pages handles trailing-slash URLs correctly when the files exist.
 
 ## That's it
 
-GitHub Pages is one of those things that looks like it should be more complicated than it is. Once DNS propagates and the cert provisions, it just works — automatic HTTPS renewals, global CDN, no servers to manage. For a static site, it's hard to beat free.
+GitHub Pages is one of those things that looks like it should be more complicated than it is. Once DNS propagates and the cert provisions, it just works: automatic HTTPS renewals, global CDN, no servers to manage. For a static site, it's hard to beat free.
 
 This site uses exactly this setup: Hugo builds the content, GitHub Actions deploys it on every push to `main`, and Pages serves it on the custom domain.

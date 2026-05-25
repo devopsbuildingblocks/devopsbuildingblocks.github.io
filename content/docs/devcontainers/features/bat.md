@@ -49,8 +49,8 @@ Sets the `BAT_THEME` environment variable. Configures `man` to use bat as its pa
 
 **Commands:**
 
-- `bat-themes` — list all available themes with previews
-- `bat-theme <name>` — switch to a different theme
+- `bat-themes`:list all available themes with previews
+- `bat-theme <name>`:switch to a different theme
 
 ## fzf integration
 
