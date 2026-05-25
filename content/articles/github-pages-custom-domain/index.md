@@ -78,6 +78,42 @@ If you only want a subdomain, skip the `A` records and add just a CNAME:
 CNAME    docs    <org>.github.io.
 ```
 
+### Configuring DNS in Namecheap
+
+In Namecheap, go to **Dashboard → your domain → Manage → Advanced DNS**.
+
+You'll see a table of existing records. Delete any default `A` records or parking records that Namecheap added, then click **Add New Record** for each of the following:
+
+**A records for the apex domain:**
+
+| Type | Host | Value | TTL |
+|------|------|-------|-----|
+| A Record | @ | 185.199.108.153 | Automatic |
+| A Record | @ | 185.199.109.153 | Automatic |
+| A Record | @ | 185.199.110.153 | Automatic |
+| A Record | @ | 185.199.111.153 | Automatic |
+
+**AAAA records for IPv6:**
+
+| Type | Host | Value | TTL |
+|------|------|-------|-----|
+| AAAA Record | @ | 2606:50c0:8000::153 | Automatic |
+| AAAA Record | @ | 2606:50c0:8001::153 | Automatic |
+| AAAA Record | @ | 2606:50c0:8002::153 | Automatic |
+| AAAA Record | @ | 2606:50c0:8003::153 | Automatic |
+
+**CNAME for www:**
+
+| Type | Host | Value | TTL |
+|------|------|-------|-----|
+| CNAME Record | www | devopsbuildingblocks.github.io. | Automatic |
+
+{{< callout type="tip" >}}
+In Namecheap's interface the **Host** field is just the subdomain portion — use `@` for the apex and `www` for the www subdomain. The trailing dot on the CNAME value is standard DNS notation; Namecheap accepts it with or without.
+{{< /callout >}}
+
+Click the checkmark to save each record. Namecheap also has a **URL Redirect Record** type — don't use that here, it's a different thing.
+
 DNS propagation typically takes a few minutes to a few hours depending on your registrar. You can check with:
 
 ```bash
