@@ -1702,6 +1702,13 @@ details[open] > .docs-tree-section-label {
 [data-theme="dark"] .site-nav {
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
+/* Brand stripe and footer gradient use original blue regardless of mode */
+[data-theme="dark"] .site-nav::before {
+  background: linear-gradient(to right, var(--red) 0% 33.3%, #2B5AB7 33.3% 66.6%, var(--yellow) 66.6% 100%);
+}
+[data-theme="dark"] .site-footer {
+  border-image: linear-gradient(to right, var(--red) 0% 33.3%, #2B5AB7 33.3% 66.6%, var(--yellow) 66.6% 100%) 1;
+}
 
 /* --- Badges with hardcoded light-mode colors --- */
 [data-theme="dark"] .badge-beginner {
