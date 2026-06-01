@@ -20,7 +20,9 @@
   17.  Code Blocks
   18.  Table of Contents
   19.  Footer
-  20.  Responsive Breakpoints
+  20.  Theme Toggle Button
+  21.  Dark Mode
+  23.  Responsive Breakpoints
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -1420,6 +1422,12 @@ details[open] > .docs-tree-section-label {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Breadcrumbs inside a dark section header */
+.post-header--docs-section .breadcrumb-item a,
+.post-header--docs-section .breadcrumb-item--current,
+.post-header--docs-section .breadcrumb-sep { color: rgba(255,255,255,0.6); }
+.post-header--docs-section .breadcrumb-item a:hover { color: #ffffff; }
+
 /* --- Breadcrumbs --- */
 
 .breadcrumbs {
@@ -1601,7 +1609,135 @@ details[open] > .docs-tree-section-label {
 }
 
 /* --------------------------------------------------------------------------
-  20. Responsive Breakpoints
+  20. Theme Toggle Button
+   -------------------------------------------------------------------------- */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius);
+  color: var(--mid);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  color: var(--dark);
+  background: var(--light-blue);
+  border-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+  21. Dark Mode
+   -------------------------------------------------------------------------- */
+
+/*
+ * Strategy: --blue is used both as TEXT color (nav, links, badges) AND as
+ * BACKGROUND color (buttons, table headers, card type chips). In dark mode
+ * the brand blue #2B5AB7 is too dark to read as text against dark surfaces,
+ * so we lighten it to #89b4fa for text/border use. Elements that use blue as
+ * a BACKGROUND get explicit overrides to keep the brand (or dark-friendly) color.
+ */
+[data-theme="dark"] {
+  --white:        #1e1e2e;   /* page / card background */
+  --dark:         #cdd6f4;   /* primary text */
+  --mid:          #a6adc8;   /* secondary text */
+  --muted:        #8891a8;   /* was #6c7086 — too low contrast on dark bg */
+  --border:       #45475a;   /* was #313244 — barely visible; now more distinct */
+  --blue:         #89b4fa;   /* lightened for text / border readability */
+  --blue-dark:    #74a7f8;
+  --blue-light:   #1a2d50;   /* tinted dark surface (toc bg, badge bg, etc.) */
+  --red-light:    #3a1515;
+  --yellow-light: #35290a;
+  --light-blue:   #1e2d42;   /* inline code bg */
+  --cream:        #252030;
+  --cream-dark:   #302840;
+  --surface:      #2a2a3e;   /* sidebar / hover surface (was undefined) */
+  --shadow-card:       4px 4px 0 rgba(0,0,0,0.6);
+  --shadow-card-hover: 7px 7px 0 rgba(0,0,0,0.6);
+}
+
+/* --- Backgrounds that use blue: keep brand color, force readable text --- */
+[data-theme="dark"] th {
+  background: #2B5AB7;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .cta--guide,
+[data-theme="dark"] .cta--docs {
+  background-color: #2B5AB7;
+  color: #ffffff;
+}
+[data-theme="dark"] .cta--guide:hover,
+[data-theme="dark"] .cta--docs:hover { color: #ffffff; }
+
+[data-theme="dark"] .cta--article { background-color: var(--red); color: #ffffff; }
+[data-theme="dark"] .cta--article:hover { color: #ffffff; }
+
+[data-theme="dark"] .cta--til,
+[data-theme="dark"] .cta--til:hover { color: #1a1a1a; }
+
+[data-theme="dark"] .post-card--guide .post-card-type,
+[data-theme="dark"] .post-card--docs .post-card-type {
+  background: #2B5AB7;
+  color: #ffffff;
+}
+[data-theme="dark"] .post-card--article .post-card-type {
+  background: var(--red);
+  color: #ffffff;
+}
+[data-theme="dark"] .post-card--til .post-card-type { color: #1a1a1a; }
+
+/* --- Section headers / hero sit on fixed dark (hero-bg) — text must be white --- */
+[data-theme="dark"] .section-header h1,
+[data-theme="dark"] .hero-title,
+[data-theme="dark"] .post-header--docs-section .post-title { color: #ffffff; }
+
+/* --- Nav --- */
+[data-theme="dark"] .site-nav {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+/* --- Badges with hardcoded light-mode colors --- */
+[data-theme="dark"] .badge-beginner {
+  background: #0d2b18;
+  color: #4caf7d;
+  border-color: #4caf7d;
+}
+[data-theme="dark"] .badge-advanced {
+  background: #2d1500;
+  color: #f0a060;
+  border-color: #f0a060;
+}
+
+/* --- Callouts with hardcoded colors --- */
+[data-theme="dark"] .callout--tip {
+  background: #0d2b18;
+  border-color: #4caf7d;
+}
+[data-theme="dark"] .callout--tip .callout-icon { color: #4caf7d; }
+[data-theme="dark"] .callout--warning .callout-icon { color: #d4a017; }
+
+/* --- Post card top borders: restore brand blue (--blue was lightened for text use) --- */
+[data-theme="dark"] .post-card--guide,
+[data-theme="dark"] .post-card--docs { border-top-color: #2B5AB7; }
+
+/* --- Post card title hover colors: keep brand hues but ensure they read --- */
+[data-theme="dark"] .post-card--guide .post-card-title a:hover,
+[data-theme="dark"] .post-card--docs .post-card-title a:hover { color: var(--blue); }
+[data-theme="dark"] .post-card--article .post-card-title a:hover { color: #f38ba8; }
+[data-theme="dark"] .post-card--til .post-card-title a:hover { color: var(--yellow); }
+
+/* --- Hero CTA buttons: border is always dark — hero-bg doesn't change between modes --- */
+[data-theme="dark"] .cta { border-color: #1A1A1A; }
+
+/* --------------------------------------------------------------------------
+  23. Responsive Breakpoints
    -------------------------------------------------------------------------- */
 
 /* TOC sidebar at wide viewports */
