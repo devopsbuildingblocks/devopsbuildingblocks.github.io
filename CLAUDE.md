@@ -42,6 +42,11 @@ When adding a new feature, insert it alphabetically and renumber affected featur
 2. Set `weight` to the next available multiple of 10 (check existing files)
 3. Add a row to the feature table in `content/docs/devcontainers/features/_index.md` (alphabetical order in the table)
 
+## Writing style
+
+- No emojis in content files
+- No em dashes (`--` or `—`) in content files; use commas, colons, or rewrite the sentence instead
+
 ## Adding a new image doc
 
 1. Create `content/docs/devcontainers/images/<name>.md` — use the Dockerfile as the source of truth

@@ -23,5 +23,3 @@ kubectl debug -it my-pod \
 The `--target` flag makes the ephemeral container share the process namespace of your app container, so you can inspect its processes, read its filesystem via `/proc/<pid>/root`, and check its network, all without modifying the original pod spec.
 
 The ephemeral container disappears when the pod restarts. It's not there permanently.
-
-**Why this tripped me up:** I assumed `kubectl debug` was just a friendlier alias for `kubectl exec`. It's not. It creates a new container. That's why it works on distroless images where exec would give you `exec /bin/sh: no such file or directory`.
