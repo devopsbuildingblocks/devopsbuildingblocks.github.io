@@ -4,6 +4,7 @@ description: "Installs Devbox, a Nix-based tool for creating reproducible, isola
 weight: 50
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 `devbox` is the foundational package management feature. All tool features in this collection install their software via `devbox global add`, so this feature (or an image that includes it) must be present.

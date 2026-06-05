@@ -4,6 +4,7 @@ description: "Ubuntu base image with Nix and Devbox pre-installed. Foundation fo
 weight: 20
 date: 2026-05-20
 type: docs
+topics: ["devcontainers"]
 ---
 
 `ubuntu-devbox` adds Nix and Devbox to [`ubuntu-base`](../ubuntu-base/), giving you a reproducible package management layer before any tool-specific features are applied.

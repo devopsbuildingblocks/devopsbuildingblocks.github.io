@@ -4,6 +4,7 @@ description: "Installs eza, a modern ls replacement with Git status, color theme
 weight: 70
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.2.0` | [eza on GitHub](https://github.com/eza-community/eza)

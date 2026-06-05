@@ -4,6 +4,7 @@ description: "Installs bat, a cat clone with syntax highlighting, Git integratio
 weight: 10
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.2.0` | [bat on GitHub](https://github.com/sharkdp/bat)

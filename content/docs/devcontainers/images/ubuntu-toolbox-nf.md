@@ -4,6 +4,7 @@ description: "ubuntu-toolbox with Nerd Font icons enabled across all tools."
 weight: 40
 date: 2026-05-20
 type: docs
+topics: ["devcontainers"]
 ---
 
 `ubuntu-toolbox-nf` is identical to [`ubuntu-toolbox`](../ubuntu-toolbox/) but with Nerd Font icon support enabled in `eza`, `lazygit`, and `oh-my-posh`.

@@ -4,6 +4,7 @@ description: "Installs lazygit, a terminal UI for git, with configurable themes 
 weight: 120
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.2.1` | [lazygit on GitHub](https://github.com/jesseduffield/lazygit)

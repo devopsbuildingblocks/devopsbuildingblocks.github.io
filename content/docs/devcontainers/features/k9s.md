@@ -4,6 +4,7 @@ description: "Installs k9s, a terminal UI for managing Kubernetes clusters."
 weight: 110
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.2.0` | [k9s on GitHub](https://github.com/derailed/k9s)

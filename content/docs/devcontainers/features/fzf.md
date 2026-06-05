@@ -4,6 +4,7 @@ description: "Installs fzf, a general-purpose command-line fuzzy finder with key
 weight: 90
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.2.0` | [fzf on GitHub](https://github.com/junegunn/fzf)

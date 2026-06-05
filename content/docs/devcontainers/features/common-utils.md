@@ -4,6 +4,7 @@ description: "Creates the non-root vscode user, sets up the shellrc.d framework,
 weight: 30
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 `common-utils` is the foundation feature that all other features in this collection depend on. It's automatically included in all published images. You only need to add it explicitly if you're building on a third-party base image.

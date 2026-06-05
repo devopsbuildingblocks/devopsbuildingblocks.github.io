@@ -4,6 +4,7 @@ description: "Installs direnv, an environment switcher for the shell, with /work
 weight: 60
 date: 2026-06-05
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.1.0` | [direnv.net](https://direnv.net)

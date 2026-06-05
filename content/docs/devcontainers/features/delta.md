@@ -4,6 +4,7 @@ description: "Installs delta, a syntax-highlighting pager for git diffs, with op
 weight: 40
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.2.0` | [delta on GitHub](https://github.com/dandavison/delta)

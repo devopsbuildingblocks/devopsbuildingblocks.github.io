@@ -4,6 +4,7 @@ description: "Ubuntu dev environment with a curated set of modern CLI tools pre-
 weight: 30
 date: 2026-05-20
 type: docs
+topics: ["devcontainers"]
 ---
 
 `ubuntu-toolbox` builds on [`ubuntu-devbox`](../ubuntu-devbox/) and layers in a curated set of modern CLI tools, all pre-configured with sensible defaults.

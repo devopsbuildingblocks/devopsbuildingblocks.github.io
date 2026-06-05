@@ -4,6 +4,7 @@ description: "Installs ripgrep (rg), a fast line-oriented search tool that respe
 weight: 140
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.1.1` | [ripgrep on GitHub](https://github.com/BurntSushi/ripgrep)

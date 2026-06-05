@@ -4,6 +4,7 @@ description: "Installs Gemini CLI and the google.geminicodeassist VS Code extens
 weight: 100
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.2.0` | [Gemini CLI docs](https://geminicli.com/docs/)

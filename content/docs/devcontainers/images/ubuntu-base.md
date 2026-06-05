@@ -4,6 +4,7 @@ description: "Foundation Ubuntu image with common build dependencies. The base f
 weight: 10
 date: 2026-05-20
 type: docs
+topics: ["devcontainers"]
 ---
 
 `ubuntu-base` is built on `buildpack-deps:noble-curl` (Ubuntu 24.04 LTS) and provides a clean foundation with the `vscode` non-root user and common development utilities installed via the `common-utils` feature.

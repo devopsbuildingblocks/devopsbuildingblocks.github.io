@@ -4,6 +4,7 @@ description: "Foundation Rocky Linux 9 image with common build dependencies."
 weight: 50
 date: 2026-05-20
 type: docs
+topics: ["devcontainers"]
 ---
 
 `rocky-base` mirrors [`ubuntu-base`](../ubuntu-base/) on a Rocky Linux 9 foundation, for environments where an RPM-based OS is required.

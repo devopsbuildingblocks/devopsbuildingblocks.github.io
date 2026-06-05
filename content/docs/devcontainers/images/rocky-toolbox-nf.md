@@ -4,6 +4,7 @@ description: "rocky-toolbox with Nerd Font icons enabled."
 weight: 80
 date: 2026-05-20
 type: docs
+topics: ["devcontainers"]
 ---
 
 `rocky-toolbox-nf` is identical to [`rocky-toolbox`](../rocky-toolbox/) with Nerd Font icon support enabled. Equivalent to [`ubuntu-toolbox-nf`](../ubuntu-toolbox-nf/) on Rocky Linux.

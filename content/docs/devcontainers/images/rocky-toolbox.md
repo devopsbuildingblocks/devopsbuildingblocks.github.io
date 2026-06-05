@@ -4,6 +4,7 @@ description: "Rocky Linux dev environment with a curated set of modern CLI tools
 weight: 70
 date: 2026-05-20
 type: docs
+topics: ["devcontainers"]
 ---
 
 `rocky-toolbox` is the Rocky Linux equivalent of [`ubuntu-toolbox`](../ubuntu-toolbox/), built on [`rocky-devbox`](../rocky-devbox/).

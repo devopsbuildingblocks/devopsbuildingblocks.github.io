@@ -4,6 +4,7 @@ description: "Installs Claude Code CLI and the anthropic.claude-code VS Code ext
 weight: 20
 date: 2026-05-20
 type: docs
+topics: ["devcontainers", "tools"]
 ---
 
 **Current version:** `0.2.0` | [Claude Code docs](https://docs.anthropic.com/en/docs/claude-code)
