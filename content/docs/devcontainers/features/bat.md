@@ -1,7 +1,8 @@
 ---
 title: "bat"
 description: "Installs bat, a cat clone with syntax highlighting, Git integration, and a built-in pager."
-weight: 30
+weight: 10
+date: 2026-05-20
 type: docs
 ---
 

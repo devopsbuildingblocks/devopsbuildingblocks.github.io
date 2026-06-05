@@ -1,7 +1,8 @@
 ---
 title: "oh-my-posh"
 description: "Installs oh-my-posh, a shell prompt theme engine, with custom DB2 themes."
-weight: 90
+weight: 130
+date: 2026-05-20
 type: docs
 ---
 

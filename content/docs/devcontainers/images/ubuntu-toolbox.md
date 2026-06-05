@@ -2,6 +2,7 @@
 title: "ubuntu-toolbox"
 description: "Ubuntu dev environment with a curated set of modern CLI tools pre-installed and configured."
 weight: 30
+date: 2026-05-20
 type: docs
 ---
 

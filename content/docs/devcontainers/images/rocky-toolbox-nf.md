@@ -2,6 +2,7 @@
 title: "rocky-toolbox-nf"
 description: "rocky-toolbox with Nerd Font icons enabled."
 weight: 80
+date: 2026-05-20
 type: docs
 ---
 

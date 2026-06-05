@@ -2,6 +2,7 @@
 title: "delta"
 description: "Installs delta, a syntax-highlighting pager for git diffs, with optional automatic git configuration."
 weight: 40
+date: 2026-05-20
 type: docs
 ---
 

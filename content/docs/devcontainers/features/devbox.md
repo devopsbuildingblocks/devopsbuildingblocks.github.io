@@ -1,7 +1,8 @@
 ---
 title: "devbox"
 description: "Installs Devbox, a Nix-based tool for creating reproducible, isolated development environments."
-weight: 20
+weight: 50
+date: 2026-05-20
 type: docs
 ---
 

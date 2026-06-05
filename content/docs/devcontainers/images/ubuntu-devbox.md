@@ -2,6 +2,7 @@
 title: "ubuntu-devbox"
 description: "Ubuntu base image with Nix and Devbox pre-installed. Foundation for the toolbox images."
 weight: 20
+date: 2026-05-20
 type: docs
 ---
 

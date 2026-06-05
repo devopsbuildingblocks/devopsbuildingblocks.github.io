@@ -21,6 +21,7 @@ Shell integration is dropped into `~/.shellrc.d/` by the `common-utils` shell fr
 | [`common-utils`](./common-utils/) | Non-root user, shell framework, volume mounts |
 | [`delta`](./delta/) | Syntax-highlighting pager for git diffs |
 | [`devbox`](./devbox/) | Devbox package manager (Nix-based) |
+| [`direnv`](./direnv/) | Environment switcher with /workspaces whitelisted |
 | [`eza`](./eza/) | Modern `ls` replacement |
 | [`fd`](./fd/) | Fast, user-friendly `find` replacement |
 | [`fzf`](./fzf/) | Command-line fuzzy finder |

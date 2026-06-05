@@ -2,6 +2,7 @@
 title: "ubuntu-toolbox-nf"
 description: "ubuntu-toolbox with Nerd Font icons enabled across all tools."
 weight: 40
+date: 2026-05-20
 type: docs
 ---
 

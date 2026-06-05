@@ -2,6 +2,7 @@
 title: "rocky-toolbox"
 description: "Rocky Linux dev environment with a curated set of modern CLI tools pre-installed."
 weight: 70
+date: 2026-05-20
 type: docs
 ---
 

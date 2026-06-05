@@ -2,6 +2,7 @@
 title: "ubuntu-base"
 description: "Foundation Ubuntu image with common build dependencies. The base for all ubuntu-* images."
 weight: 10
+date: 2026-05-20
 type: docs
 ---
 

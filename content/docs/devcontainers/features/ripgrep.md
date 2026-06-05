@@ -1,7 +1,8 @@
 ---
 title: "ripgrep"
 description: "Installs ripgrep (rg), a fast line-oriented search tool that respects .gitignore."
-weight: 80
+weight: 140
+date: 2026-05-20
 type: docs
 ---
 

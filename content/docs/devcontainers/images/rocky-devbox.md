@@ -2,6 +2,7 @@
 title: "rocky-devbox"
 description: "Rocky Linux 9 with Nix and Devbox pre-installed."
 weight: 60
+date: 2026-05-20
 type: docs
 ---
 

@@ -25,7 +25,8 @@
       {{ $docs     := where .Site.RegularPages "Type" "docs" }}
       {{ $articles := where .Site.RegularPages "Type" "article" }}
       {{ $til      := where .Site.RegularPages "Type" "til" }}
-      {{ $recent   := union $docs $articles | union $til | first 6 }}
+      {{ $recent   := union $docs $articles | union $til }}
+      {{ $recent    = sort $recent "Date" "desc" | first 6 }}
       {{ range $recent }}
         {{ partial "post-card.html" . }}
       {{ end }}

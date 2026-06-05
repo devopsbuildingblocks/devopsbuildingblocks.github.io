@@ -1,7 +1,8 @@
 ---
 title: "lazygit"
 description: "Installs lazygit, a terminal UI for git, with configurable themes and optional delta diff pager integration."
-weight: 100
+weight: 120
+date: 2026-05-20
 type: docs
 ---
 

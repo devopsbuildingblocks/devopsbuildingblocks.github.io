@@ -2,6 +2,7 @@
 title: "rocky-base"
 description: "Foundation Rocky Linux 9 image with common build dependencies."
 weight: 50
+date: 2026-05-20
 type: docs
 ---
 
