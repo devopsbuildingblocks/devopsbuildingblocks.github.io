@@ -1,7 +1,7 @@
 ---
 title: "direnv"
 description: "Installs direnv, an environment switcher for the shell, with /workspaces automatically whitelisted."
-weight: 60
+weight: 70
 date: 2026-06-05
 type: docs
 topics: ["devcontainers", "tools"]

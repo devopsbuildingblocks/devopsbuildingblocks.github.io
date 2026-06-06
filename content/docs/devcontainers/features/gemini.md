@@ -1,7 +1,7 @@
 ---
 title: "gemini"
 description: "Installs Gemini CLI and the google.geminicodeassist VS Code extension, with config persistence across rebuilds."
-weight: 100
+weight: 110
 date: 2026-05-20
 type: docs
 topics: ["devcontainers", "tools"]

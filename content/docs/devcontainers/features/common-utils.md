@@ -1,7 +1,7 @@
 ---
 title: "common-utils"
 description: "Creates the non-root vscode user, sets up the shellrc.d framework, and mounts volumes for shell history and cache persistence."
-weight: 30
+weight: 40
 date: 2026-05-20
 type: docs
 topics: ["devcontainers", "tools"]

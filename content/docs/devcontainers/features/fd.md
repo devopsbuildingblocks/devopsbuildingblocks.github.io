@@ -1,7 +1,7 @@
 ---
 title: "fd"
 description: "Installs fd, a fast and user-friendly alternative to find."
-weight: 80
+weight: 90
 date: 2026-05-20
 type: docs
 topics: ["devcontainers", "tools"]

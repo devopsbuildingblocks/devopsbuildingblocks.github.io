@@ -9,7 +9,7 @@ topics: ["devcontainers"]
 
 `ubuntu-toolbox` builds on [`ubuntu-devbox`](../ubuntu-devbox/) and layers in a curated set of modern CLI tools, all pre-configured with sensible defaults.
 
-**Current version:** `0.1.5`
+**Current version:** `0.1.6`
 
 ## Usage
 

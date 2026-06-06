@@ -1,7 +1,7 @@
 ---
 title: "fzf"
 description: "Installs fzf, a general-purpose command-line fuzzy finder with key bindings, shell completion, and theme support."
-weight: 90
+weight: 100
 date: 2026-05-20
 type: docs
 topics: ["devcontainers", "tools"]

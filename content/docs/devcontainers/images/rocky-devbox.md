@@ -9,7 +9,7 @@ topics: ["devcontainers"]
 
 `rocky-devbox` adds Nix and Devbox to [`rocky-base`](../rocky-base/). Equivalent to [`ubuntu-devbox`](../ubuntu-devbox/) on Rocky Linux.
 
-**Current version:** `0.1.5`
+**Current version:** `0.1.6`
 
 ## Usage
 

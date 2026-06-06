@@ -1,7 +1,7 @@
 ---
 title: "devbox"
 description: "Installs Devbox, a Nix-based tool for creating reproducible, isolated development environments."
-weight: 50
+weight: 60
 date: 2026-05-20
 type: docs
 topics: ["devcontainers", "tools"]
@@ -9,7 +9,7 @@ topics: ["devcontainers", "tools"]
 
 `devbox` is the foundational package management feature. All tool features in this collection install their software via `devbox global add`, so this feature (or an image that includes it) must be present.
 
-**Current version:** `0.2.3`
+**Current version:** `0.3.0`
 
 ## Usage
 
@@ -34,6 +34,7 @@ topics: ["devcontainers", "tools"]
 The VS Code terminal is configured to open directly into a `devbox shell`:
 
 ```json
+"devbox.autoShellOnTerminal": false,
 "terminal.integrated.defaultProfile.linux": "devbox",
 "terminal.integrated.profiles.linux": {
   "devbox": { "path": "/usr/bin/zsh", "args": ["-ic", "devbox shell -q"] }

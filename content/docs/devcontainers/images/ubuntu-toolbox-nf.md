@@ -9,7 +9,7 @@ topics: ["devcontainers"]
 
 `ubuntu-toolbox-nf` is identical to [`ubuntu-toolbox`](../ubuntu-toolbox/) but with Nerd Font icon support enabled in `eza`, `lazygit`, and `oh-my-posh`.
 
-**Current version:** `0.1.5`
+**Current version:** `0.1.6`
 
 ## Usage
 

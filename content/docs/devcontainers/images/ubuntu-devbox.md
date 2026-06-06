@@ -9,7 +9,7 @@ topics: ["devcontainers"]
 
 `ubuntu-devbox` adds Nix and Devbox to [`ubuntu-base`](../ubuntu-base/), giving you a reproducible package management layer before any tool-specific features are applied.
 
-**Current version:** `0.1.13`
+**Current version:** `0.1.14`
 
 ## Usage
 

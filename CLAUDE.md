@@ -26,7 +26,7 @@ Weights control sidebar ordering within Hugo. They are assigned **chronologicall
 ### Features (`content/docs/devcontainers/features/`)
 
 Weights are assigned alphabetically (steps of 10) so the sidebar stays in alphabetical order. Current assignments:
-`bat=10, claude=20, common-utils=30, delta=40, devbox=50, direnv=60, eza=70, fd=80, fzf=90, gemini=100, k9s=110, lazygit=120, oh-my-posh=130, ripgrep=140`
+`awscli2=10, bat=20, claude=30, common-utils=40, delta=50, devbox=60, direnv=70, eza=80, fd=90, fzf=100, gemini=110, helm=120, k9s=130, kubectl=140, lazygit=150, oh-my-posh=160, ripgrep=170, terragrunt=180`
 
 When adding a new feature, insert it alphabetically and renumber affected features to maintain the steps-of-10 sequence.
 

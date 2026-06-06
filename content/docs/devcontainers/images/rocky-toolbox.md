@@ -9,7 +9,7 @@ topics: ["devcontainers"]
 
 `rocky-toolbox` is the Rocky Linux equivalent of [`ubuntu-toolbox`](../ubuntu-toolbox/), built on [`rocky-devbox`](../rocky-devbox/).
 
-**Current version:** `0.1.5`
+**Current version:** `0.1.6`
 
 ## Usage
 

@@ -27,13 +27,13 @@ rocky-base  (rockylinux:9)
 | Image | Version | Description |
 |-------|---------|-------------|
 | `ubuntu-base` | 0.1.11 | Foundation image, build dependencies |
-| `ubuntu-devbox` | 0.1.13 | Adds Nix and Devbox |
-| `ubuntu-toolbox` | 0.1.5 | Adds modern CLI tools |
-| `ubuntu-toolbox-nf` | 0.1.5 | CLI tools + Nerd Font icons |
+| `ubuntu-devbox` | 0.1.14 | Adds Nix and Devbox |
+| `ubuntu-toolbox` | 0.1.6 | Adds modern CLI tools |
+| `ubuntu-toolbox-nf` | 0.1.6 | CLI tools + Nerd Font icons |
 | `rocky-base` | 0.1.5 | Rocky Linux 9 foundation |
-| `rocky-devbox` | 0.1.5 | Adds Nix and Devbox |
-| `rocky-toolbox` | 0.1.5 | Adds modern CLI tools |
-| `rocky-toolbox-nf` | 0.1.5 | CLI tools + Nerd Font icons |
+| `rocky-devbox` | 0.1.6 | Adds Nix and Devbox |
+| `rocky-toolbox` | 0.1.6 | Adds modern CLI tools |
+| `rocky-toolbox-nf` | 0.1.6 | CLI tools + Nerd Font icons |
 
 ## Choosing an image
 

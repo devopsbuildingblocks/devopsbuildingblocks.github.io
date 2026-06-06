@@ -9,7 +9,7 @@ topics: ["devcontainers"]
 
 `rocky-toolbox-nf` is identical to [`rocky-toolbox`](../rocky-toolbox/) with Nerd Font icon support enabled. Equivalent to [`ubuntu-toolbox-nf`](../ubuntu-toolbox-nf/) on Rocky Linux.
 
-**Current version:** `0.1.5`
+**Current version:** `0.1.6`
 
 ## Usage
 

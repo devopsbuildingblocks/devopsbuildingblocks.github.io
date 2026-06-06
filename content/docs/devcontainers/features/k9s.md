@@ -1,7 +1,7 @@
 ---
 title: "k9s"
 description: "Installs k9s, a terminal UI for managing Kubernetes clusters."
-weight: 110
+weight: 130
 date: 2026-05-20
 type: docs
 topics: ["devcontainers", "tools"]

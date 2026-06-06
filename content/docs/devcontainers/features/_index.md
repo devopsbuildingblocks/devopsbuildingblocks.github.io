@@ -16,6 +16,7 @@ Shell integration is dropped into `~/.shellrc.d/` by the `common-utils` shell fr
 
 | Feature | Description |
 |---------|-------------|
+| [`awscli2`](./awscli2/) | AWS CLI v2 |
 | [`bat`](./bat/) | `cat` clone with syntax highlighting |
 | [`claude`](./claude/) | Claude Code CLI and VS Code extension |
 | [`common-utils`](./common-utils/) | Non-root user, shell framework, volume mounts |
@@ -26,10 +27,13 @@ Shell integration is dropped into `~/.shellrc.d/` by the `common-utils` shell fr
 | [`fd`](./fd/) | Fast, user-friendly `find` replacement |
 | [`fzf`](./fzf/) | Command-line fuzzy finder |
 | [`gemini`](./gemini/) | Gemini CLI and VS Code extension |
+| [`helm`](./helm/) | Kubernetes package manager |
 | [`k9s`](./k9s/) | Terminal UI for Kubernetes |
+| [`kubectl`](./kubectl/) | Kubernetes command-line tool |
 | [`lazygit`](./lazygit/) | Terminal UI for git |
 | [`oh-my-posh`](./oh-my-posh/) | Shell prompt theme engine |
 | [`ripgrep`](./ripgrep/) | Fast line-oriented search tool |
+| [`terragrunt`](./terragrunt/) | Thin wrapper for Terraform/OpenTofu |
 
 ## Dependency order
 

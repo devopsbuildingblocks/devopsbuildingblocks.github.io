@@ -1,7 +1,7 @@
 ---
 title: "claude"
 description: "Installs Claude Code CLI and the anthropic.claude-code VS Code extension, with config persistence across rebuilds."
-weight: 20
+weight: 30
 date: 2026-05-20
 type: docs
 topics: ["devcontainers", "tools"]

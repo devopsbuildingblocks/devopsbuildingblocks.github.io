@@ -1,7 +1,7 @@
 ---
 title: "eza"
 description: "Installs eza, a modern ls replacement with Git status, color themes, and optional Nerd Font icons."
-weight: 70
+weight: 80
 date: 2026-05-20
 type: docs
 topics: ["devcontainers", "tools"]
