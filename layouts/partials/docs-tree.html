@@ -6,7 +6,9 @@
       {{- $isOpen := or (eq $current .) ($current.IsDescendant .) -}}
       <li class="docs-tree-item docs-tree-item--section">
         <details{{ if $isOpen }} open{{ end }}>
-          <summary class="docs-tree-section-label">{{ .Title }}</summary>
+          <summary class="docs-tree-section-label">
+            <a href="{{ .RelPermalink }}" class="docs-tree-section-link{{ if eq $current . }} is-active{{ end }}">{{ .Title }}</a>
+          </summary>
           {{- partial "docs-tree.html" (dict "section" . "current" $current) -}}
         </details>
       </li>

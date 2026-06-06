@@ -23,7 +23,7 @@ taxonomies:
   topic: "topics"
 
 outputs:
-  home: ["HTML", "RSS"]
+  home: ["HTML", "RSS", "JSON"]
   section: ["HTML", "RSS"]
   term: ["HTML"]
   taxonomy: ["HTML"]

@@ -1,3 +1,17 @@
+/* Sidebar section links — prevent <details> toggle when navigating */
+(function () {
+  function initSectionLinks() {
+    document.querySelectorAll('.docs-tree-section-link').forEach(function (link) {
+      link.addEventListener('click', function (e) { e.stopPropagation(); });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSectionLinks);
+  } else {
+    initSectionLinks();
+  }
+})();
+
 /* Copy buttons for code blocks */
 (function () {
   function initCopyButtons() {

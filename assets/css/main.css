@@ -1355,6 +1355,19 @@ details[open] > .docs-tree-section-label {
   color: var(--dark);
 }
 
+/* Link inside section summary — fills the label, navigates on click */
+.docs-tree-section-link {
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
+}
+.docs-tree-section-link:hover {
+  text-decoration: none;
+}
+.docs-tree-section-link.is-active {
+  color: var(--blue);
+}
+
 .docs-tree-item--page a {
   display: block;
   padding: var(--space-2) var(--space-3);
@@ -1633,6 +1646,226 @@ details[open] > .docs-tree-section-label {
 }
 
 /* --------------------------------------------------------------------------
+  20b. Search Trigger Button
+   -------------------------------------------------------------------------- */
+
+.search-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: transparent;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius);
+  color: var(--mid);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.search-trigger:hover {
+  color: var(--dark);
+  background: var(--light-blue);
+}
+
+/* --------------------------------------------------------------------------
+  20c. Search Modal
+   -------------------------------------------------------------------------- */
+
+#search-modal {
+  position: fixed;
+  top: 8vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: min(640px, calc(100vw - 2rem));
+  max-height: 80vh;
+  padding: 0;
+  background: transparent;
+  border: none;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+#search-modal::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+/* Input-group: icon box | input | close box — each has its own border, overlapping by border-width */
+.search-bar {
+  display: flex;
+  align-items: stretch;
+}
+
+.search-bar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-3);
+  background: var(--white);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  color: var(--muted);
+  position: relative;
+  z-index: 1;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--white);
+  border: var(--border-width) solid var(--border);
+  border-radius: 0;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--dark);
+  position: relative;
+  margin-left: calc(-1 * var(--border-width));
+  margin-right: calc(-1 * var(--border-width));
+  z-index: 2;
+  transition: border-color 0.15s;
+}
+.search-input::placeholder {
+  color: var(--muted);
+}
+.search-input:focus {
+  border-color: var(--blue);
+  z-index: 3;
+}
+
+.search-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-3);
+  background: var(--white);
+  border: var(--border-width) solid var(--border);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  transition: color 0.15s, background 0.15s;
+}
+.search-close:hover {
+  color: var(--dark);
+  background: var(--surface);
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.search-result-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--white);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.search-result-item:hover,
+.search-result-item:focus {
+  border-color: var(--blue);
+  background: var(--blue-light);
+  text-decoration: none;
+  outline: none;
+}
+.search-result-item:focus .search-result-arrow {
+  color: var(--blue);
+  transform: translateX(3px);
+}
+
+.search-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.search-result-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+.search-result-arrow {
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: var(--muted);
+  transition: transform 0.15s, color 0.15s;
+}
+.search-result-item:hover .search-result-arrow {
+  color: var(--blue);
+  transform: translateX(3px);
+}
+
+.search-result-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.search-result-type {
+  flex-shrink: 0;
+  padding: 1px var(--space-2);
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: var(--border-radius);
+}
+.search-result-type--docs    { background: var(--blue-light);   color: var(--blue); }
+.search-result-type--article { background: var(--red-light);    color: var(--red);  }
+.search-result-type--til     { background: var(--yellow-light); color: var(--dark); }
+
+.search-result-section,
+.search-result-date {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.search-result-sep {
+  font-size: 0.78rem;
+  color: var(--border);
+}
+
+.search-result-summary {
+  font-size: 0.82rem;
+  color: var(--mid);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+.search-no-results {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+
+/* --------------------------------------------------------------------------
   21. Dark Mode
    -------------------------------------------------------------------------- */
 
@@ -1742,6 +1975,7 @@ details[open] > .docs-tree-section-label {
 
 /* --- Hero CTA buttons: border is always dark — hero-bg doesn't change between modes --- */
 [data-theme="dark"] .cta { border-color: #1A1A1A; }
+
 
 /* --------------------------------------------------------------------------
   23. Responsive Breakpoints

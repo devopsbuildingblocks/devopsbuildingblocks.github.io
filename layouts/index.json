@@ -1,0 +1,20 @@
+{{- $pages := slice -}}
+{{- range .Site.Pages -}}
+  {{- if and .IsPage (not .Draft) -}}
+    {{- $clean := .Plain | replaceRE `&[#a-zA-Z0-9]+;` " " | replaceRE `\s+` " " | truncate 1000 "" -}}
+    {{- $summary := .Summary | replaceRE `<[^>]+>` "" | replaceRE `&[#a-zA-Z0-9]+;` " " | replaceRE `\s+` " " | truncate 200 "" -}}
+    {{- $date := "" -}}
+    {{- if not .Date.IsZero -}}{{- $date = .Date.Format "Jan 2, 2006" -}}{{- end -}}
+    {{- $pages = $pages | append (dict
+      "title"       .Title
+      "description" (or .Description "")
+      "section"     .Parent.Title
+      "date"        $date
+      "permalink"   .RelPermalink
+      "type"        .Type
+      "summary"     $summary
+      "content"     $clean
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages | jsonify -}}
