@@ -2,6 +2,7 @@
 title: "Images"
 description: "Pre-built dev container images published to ghcr.io. Ubuntu and Rocky Linux variants."
 weight: 10
+hide_child_list: true
 ---
 
 All images are published to `ghcr.io/devopsbuildingblocks/devcontainer-images/` and built for `linux/amd64` and `linux/arm64`.
@@ -22,18 +23,18 @@ rocky-base  (rockylinux:9)
     └── rocky-toolbox-nf  (+ CLI tools + Nerd Font icons)
 ```
 
-## Quick reference
+## Image list
 
-| Image | Version | Description |
-|-------|---------|-------------|
-| `ubuntu-base` | 0.1.11 | Foundation image, build dependencies |
-| `ubuntu-devbox` | 0.1.14 | Adds Nix and Devbox |
-| `ubuntu-toolbox` | 0.1.6 | Adds modern CLI tools |
-| `ubuntu-toolbox-nf` | 0.1.6 | CLI tools + Nerd Font icons |
-| `rocky-base` | 0.1.5 | Rocky Linux 9 foundation |
-| `rocky-devbox` | 0.1.6 | Adds Nix and Devbox |
-| `rocky-toolbox` | 0.1.6 | Adds modern CLI tools |
-| `rocky-toolbox-nf` | 0.1.6 | CLI tools + Nerd Font icons |
+| Image | Description |
+|-------|-------------|
+| [`ubuntu-base`](./ubuntu-base/) | Foundation image, build dependencies |
+| [`ubuntu-devbox`](./ubuntu-devbox/) | Adds Nix and Devbox |
+| [`ubuntu-toolbox`](./ubuntu-toolbox/) | Adds modern CLI tools |
+| [`ubuntu-toolbox-nf`](./ubuntu-toolbox-nf/) | CLI tools + Nerd Font icons |
+| [`rocky-base`](./rocky-base/) | Rocky Linux 9 foundation |
+| [`rocky-devbox`](./rocky-devbox/) | Adds Nix and Devbox |
+| [`rocky-toolbox`](./rocky-toolbox/) | Adds modern CLI tools |
+| [`rocky-toolbox-nf`](./rocky-toolbox-nf/) | CLI tools + Nerd Font icons |
 
 ## Choosing an image
 

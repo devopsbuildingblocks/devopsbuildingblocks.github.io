@@ -12,7 +12,7 @@
       {{ partial "docs-breadcrumbs.html" . }}
       <div class="post-body">
         {{ .Content }}
-        {{- if .Pages -}}
+        {{- if and .Pages (not .Params.hide_child_list) -}}
         <div class="docs-page-list">
           {{ range .Pages.ByWeight }}
           <a href="{{ .RelPermalink }}" class="docs-page-list-item">

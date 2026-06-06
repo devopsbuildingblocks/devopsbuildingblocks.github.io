@@ -2,6 +2,7 @@
 title: "Features"
 description: "Composable dev container features. Each installs one tool via devbox global with shell integration and VS Code settings."
 weight: 20
+hide_child_list: true
 ---
 
 Features are published to `ghcr.io/devopsbuildingblocks/devcontainer-features/` and follow the [Dev Container Feature spec](https://containers.dev/implementors/features/).
