@@ -6,10 +6,10 @@
   <div class="docs-main-col">
     <article class="post post--docs">
       <header class="post-header post-header--docs-section">
-        {{ partial "docs-breadcrumbs.html" . }}
         <h1 class="post-title">{{ .Title }}</h1>
         {{ with .Description }}<p class="post-desc">{{ . }}</p>{{ end }}
       </header>
+      {{ partial "docs-breadcrumbs.html" . }}
       <div class="post-body">
         {{ .Content }}
         {{- if .Pages -}}

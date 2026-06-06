@@ -125,14 +125,14 @@
     }
   }
 
-  // Site-wide background — small, slow, very subtle
+  // Site-wide background
   var siteBg = document.querySelector('.site-bg-blocks');
   if (siteBg) {
-    spawnBlocks(siteBg, 20, {
-      minSize: 8,  maxSize: 28,
-      minDur:  28, maxDur:  50,
-      drift:   60,
-      minOp:   0.06, maxOp: 0.12,
+    spawnBlocks(siteBg, 35, {
+      minSize: 10, maxSize: 40,
+      minDur:  20, maxDur:  45,
+      drift:   80,
+      minOp:   0.18, maxOp: 0.35,
     });
   }
 

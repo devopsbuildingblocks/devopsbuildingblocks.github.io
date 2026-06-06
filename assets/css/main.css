@@ -39,7 +39,6 @@
   --yellow:       #F5C518;
   --yellow-light: #fefae9;
   --yellow-dark:  #c49d0f;
-  --light-blue:   #C8EEF5;
   --cream:        #F5EDD6;
   --cream-dark:   #ede0c4;
   --dark:         #1A1A1A;
@@ -173,7 +172,7 @@ hr {
 code {
   font-family: var(--font-code);
   font-size: 0.875em;
-  background: var(--light-blue);
+  background: var(--blue-light);
   padding: 0.1em 0.4em;
   border-radius: var(--border-radius);
   color: var(--dark);
@@ -319,7 +318,7 @@ tr:last-child td { border-bottom: none; }
 
 .nav-links a:hover {
   color: var(--dark);
-  background: var(--light-blue);
+  background: var(--blue-light);
   text-decoration: none;
 }
 
@@ -465,7 +464,6 @@ tr:last-child td { border-bottom: none; }
    8. Recent Posts Section
    -------------------------------------------------------------------------- */
 .recent-posts {
-  background: var(--white);
   padding: var(--space-12) 0 var(--space-16);
 }
 
@@ -678,28 +676,73 @@ tr:last-child td { border-bottom: none; }
   position: relative;
   z-index: 1;
   margin-bottom: var(--space-2);
-  color: var(--white);
+  color: var(--dark);
 }
 
 .section-desc {
   position: relative;
   z-index: 1;
   font-size: 1.05rem;
-  color: rgba(255,255,255,0.8);
+  color: var(--mid);
 }
 
 /* All section headers: same dark base, same glow radius/position, same opacity — only hue differs */
 .section-header--guide,
 .section-header--docs,
 .section-header--article,
-.section-header--til {
+.section-header--til,
+.section-header--topics {
   background: var(--hero-bg);
+}
+
+/* White text only on dark-background section headers */
+.section-header--guide h1,
+.section-header--docs h1,
+.section-header--article h1,
+.section-header--til h1,
+.section-header--topics h1 {
+  color: var(--white);
+}
+
+.section-header--guide .section-desc,
+.section-header--docs .section-desc,
+.section-header--article .section-desc,
+.section-header--til .section-desc,
+.section-header--topics .section-desc {
+  color: rgba(255,255,255,0.8);
 }
 
 .section-header--guide,
 .section-header--docs {
   background-image: radial-gradient(ellipse at 75% 50%, rgba(43,90,183,0.45) 0%, transparent 65%);
   border-bottom: var(--border-thick) solid var(--blue);
+}
+
+.section-header--topics {
+  background-image:
+    radial-gradient(ellipse at 15% 50%, rgba(224,59,42,0.32) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(43,90,183,0.32) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 50%, rgba(245,197,24,0.28) 0%, transparent 45%);
+  border-bottom: var(--border-thick) solid;
+  border-image: linear-gradient(to right, var(--red) 0% 33.3%, var(--blue) 33.3% 66.6%, var(--yellow) 66.6% 100%) 1;
+}
+
+.section-header--topics::before {
+  width: 100px;
+  height: 100px;
+  background: var(--red);
+  right: 80px;
+  top: -20px;
+  transform: rotate(18deg);
+}
+
+.section-header--topics::after {
+  width: 55px;
+  height: 55px;
+  background: var(--yellow);
+  right: 20px;
+  bottom: -18px;
+  transform: rotate(-10deg);
 }
 
 .section-header--article {
@@ -867,7 +910,7 @@ tr:last-child td { border-bottom: none; }
   padding-bottom: var(--space-2);
 }
 .post--guide .post-body h2,
-.post--docs .post-body h2  { border-bottom: var(--border-width) solid var(--light-blue); }
+.post--docs .post-body h2  { border-bottom: var(--border-width) solid var(--blue); }
 
 .post-body h3 { margin-top: var(--space-8);  margin-bottom: var(--space-3); }
 .post-body h4 { margin-top: var(--space-6);  margin-bottom: var(--space-2); }
@@ -991,7 +1034,7 @@ tr:last-child td { border-bottom: none; }
   text-transform: lowercase;
   padding: 0.15em 0.65em;
   border-radius: 2rem;
-  background: var(--light-blue);
+  background: var(--blue-light);
   color: var(--blue-dark);
   text-decoration: none;
   border: var(--border-width) solid transparent;
@@ -1384,7 +1427,7 @@ details[open] > .docs-tree-section-label {
   text-decoration: none;
 }
 .docs-tree-item--page.is-active a {
-  background: var(--light-blue);
+  background: var(--blue-light);
   color: var(--blue);
   font-weight: 600;
 }
@@ -1641,7 +1684,7 @@ details[open] > .docs-tree-section-label {
 }
 .theme-toggle:hover {
   color: var(--dark);
-  background: var(--light-blue);
+  background: var(--blue-light);
   border-color: transparent;
 }
 
@@ -1666,7 +1709,7 @@ details[open] > .docs-tree-section-label {
 }
 .search-trigger:hover {
   color: var(--dark);
-  background: var(--light-blue);
+  background: var(--blue-light);
 }
 
 /* --------------------------------------------------------------------------
@@ -1889,7 +1932,6 @@ details[open] > .docs-tree-section-label {
   --blue-light:   #1a2d50;   /* tinted dark surface (toc bg, badge bg, etc.) */
   --red-light:    #3a1515;
   --yellow-light: #35290a;
-  --light-blue:   #1e2d42;   /* inline code bg */
   --cream:        #252030;
   --cream-dark:   #302840;
   --surface:      #2a2a3e;   /* sidebar / hover surface (was undefined) */
@@ -1932,6 +1974,12 @@ details[open] > .docs-tree-section-label {
 [data-theme="dark"] .section-header h1,
 [data-theme="dark"] .hero-title,
 [data-theme="dark"] .post-header--docs-section .post-title { color: #ffffff; }
+[data-theme="dark"] .post-header--docs-section { border-bottom-color: #2B5AB7 !important; }
+[data-theme="dark"] .section-header--guide,
+[data-theme="dark"] .section-header--docs { border-bottom-color: #2B5AB7; }
+[data-theme="dark"] .section-header--topics {
+  border-image: linear-gradient(to right, var(--red) 0% 33.3%, #2B5AB7 33.3% 66.6%, var(--yellow) 66.6% 100%) 1;
+}
 
 /* --- Nav --- */
 [data-theme="dark"] .site-nav {
@@ -1968,6 +2016,8 @@ details[open] > .docs-tree-section-label {
 /* --- Post card top borders: restore brand blue (--blue was lightened for text use) --- */
 [data-theme="dark"] .post-card--guide,
 [data-theme="dark"] .post-card--docs { border-top-color: #2B5AB7; }
+
+[data-theme="dark"] .docs-page-list-item { border-left-color: #2B5AB7; }
 
 /* --- Post card title hover colors: keep brand hues but ensure they read --- */
 [data-theme="dark"] .post-card--guide .post-card-title a:hover,
