@@ -1685,9 +1685,11 @@ details[open] > .docs-tree-section-label {
   background: transparent;
   border: none;
   overflow-y: auto;
-  display: flex;
   flex-direction: column;
   gap: var(--space-3);
+}
+#search-modal[open] {
+  display: flex;
 }
 
 #search-modal::backdrop {
