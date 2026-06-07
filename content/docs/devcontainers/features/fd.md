@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/fd:0": {
+  "enableAliases": false
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

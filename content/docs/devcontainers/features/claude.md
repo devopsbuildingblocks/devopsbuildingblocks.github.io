@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/claude:0": {
+  "version": "1.5.0"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

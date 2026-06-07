@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/gemini:0": {
+  "version": "0.1.20"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

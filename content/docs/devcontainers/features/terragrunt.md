@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/terragrunt:0": {
+  "version": "0.72.6"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

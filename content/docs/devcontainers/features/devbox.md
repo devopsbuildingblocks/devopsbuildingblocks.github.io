@@ -9,16 +9,22 @@ topics: ["devcontainers", "tools"]
 
 `devbox` is the foundational package management feature. All tool features in this collection install their software via `devbox global add`, so this feature (or an image that includes it) must be present.
 
-**Current version:** `0.3.0`
+**Current version:** `0.3.0` | [Devbox](https://www.jetify.com/devbox)
 
 ## Usage
 
 ```json
 "features": {
   "ghcr.io/devcontainers/features/nix:1": {},
-  "ghcr.io/devopsbuildingblocks/devcontainer-features/devbox:0": {
-    "version": "0.16.0"
-  }
+  "ghcr.io/devopsbuildingblocks/devcontainer-features/devbox:0": {}
+}
+```
+
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/devbox:0": {
+  "version": "0.16.0"
 }
 ```
 

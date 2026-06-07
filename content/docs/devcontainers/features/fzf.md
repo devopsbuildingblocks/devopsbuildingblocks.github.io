@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With a custom theme:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/fzf:0": {
+  "theme": "dracula"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

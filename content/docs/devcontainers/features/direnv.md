@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/direnv:0": {
+  "version": "2.35.0"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |
@@ -40,13 +48,3 @@ prefix = ["/workspaces"]
 
 This means any `.envrc` file inside `/workspaces` is trusted automatically — no manual `direnv allow` required after a rebuild.
 
-## Notes
-
-This feature requires the `devbox` feature (or an image that includes it) to be installed first:
-
-```json
-"features": {
-  "ghcr.io/devopsbuildingblocks/devcontainer-features/devbox:0": {},
-  "ghcr.io/devopsbuildingblocks/devcontainer-features/direnv:0": {}
-}
-```

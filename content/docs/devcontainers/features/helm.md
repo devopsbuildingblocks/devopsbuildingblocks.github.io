@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/helm:0": {
+  "version": "3.17.0"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

@@ -11,7 +11,7 @@ topics: ["devcontainers", "tools"]
 
 **Current version:** `0.1.1`
 
-## What it does
+## What's included
 
 **User setup:** Creates a non-root `vscode` user (UID 1000, GID 1000) with zsh as the default shell. VS Code is configured to use zsh in the integrated terminal.
 

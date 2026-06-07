@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/awscli2:0": {
+  "version": "2.22.0"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

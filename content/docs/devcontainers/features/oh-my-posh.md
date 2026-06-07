@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With a custom theme:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/oh-my-posh:0": {
+  "theme": "db2-light.minimal"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

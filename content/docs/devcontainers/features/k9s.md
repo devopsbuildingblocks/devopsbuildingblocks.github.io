@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With a custom theme:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/k9s:0": {
+  "theme": "nord"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

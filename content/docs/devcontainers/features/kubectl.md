@@ -17,6 +17,14 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/kubectl:0": {
+  "version": "1.32.0"
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |

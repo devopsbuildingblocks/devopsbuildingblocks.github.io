@@ -34,3 +34,7 @@ Everything in [`rocky-devbox`](../rocky-devbox/), plus:
 | `lazygit` | 0.57.0 | Terminal UI for git |
 
 Configuration and shell aliases are identical to the Ubuntu toolbox variant.
+
+## When to use this
+
+Use `rocky-toolbox` when your environment requires Rocky Linux and you want a pre-configured set of modern CLI tools. If your terminal has a Nerd Font installed, use [`rocky-toolbox-nf`](../rocky-toolbox-nf/) to also enable icons.

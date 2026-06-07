@@ -17,6 +17,15 @@ topics: ["devcontainers", "tools"]
 }
 ```
 
+With options:
+
+```json
+"ghcr.io/devopsbuildingblocks/devcontainer-features/ripgrep:0": {
+  "theme": "none",
+  "smartCase": false
+}
+```
+
 ## Options
 
 | Option | Type | Default | Description |
