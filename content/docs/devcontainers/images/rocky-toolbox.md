@@ -20,6 +20,14 @@ topics: ["devcontainers"]
 }
 ```
 
+Pin to a specific version:
+
+```json
+{
+  "image": "ghcr.io/devopsbuildingblocks/devcontainer-images/rocky-toolbox:0.1.6"
+}
+```
+
 ## What's included
 
 Everything in [`rocky-devbox`](../rocky-devbox/), plus:

@@ -20,6 +20,14 @@ topics: ["devcontainers"]
 }
 ```
 
+Pin to a specific version:
+
+```json
+{
+  "image": "ghcr.io/devopsbuildingblocks/devcontainer-images/rocky-base:0.1.5"
+}
+```
+
 ## What's included
 
 - Base: `rockylinux:9`

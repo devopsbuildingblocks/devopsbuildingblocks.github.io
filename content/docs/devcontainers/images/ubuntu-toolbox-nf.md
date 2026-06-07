@@ -20,6 +20,14 @@ topics: ["devcontainers"]
 }
 ```
 
+Pin to a specific version:
+
+```json
+{
+  "image": "ghcr.io/devopsbuildingblocks/devcontainer-images/ubuntu-toolbox-nf:0.1.6"
+}
+```
+
 ## Differences from ubuntu-toolbox
 
 | Setting | ubuntu-toolbox | ubuntu-toolbox-nf |

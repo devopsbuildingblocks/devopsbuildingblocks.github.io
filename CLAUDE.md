@@ -11,12 +11,6 @@ content/docs/devcontainers/
 layouts/
   partials/
     post-meta.html   # date display — suppressed for type: docs (intentional)
-.github/
-  workflows/
-    generate-docs.yml   # AI-powered doc generation via repository_dispatch
-    deploy.yml          # Hugo build + GitHub Pages deploy
-  scripts/
-    generate_doc.py     # calls Claude Sonnet API to generate new doc pages
 ```
 
 ## Sidebar weight conventions
@@ -42,13 +36,38 @@ When adding a new feature, insert it alphabetically and renumber affected featur
 2. Set `weight` to the next available multiple of 10 (check existing files)
 3. Add a row to the feature table in `content/docs/devcontainers/features/_index.md` (alphabetical order in the table)
 
-## Writing style
+### Feature doc structure
 
-- No emojis in content files
-- No em dashes (`--` or `—`) in content files; use commas, colons, or rewrite the sentence instead
+Follow this section order:
+
+- **Version line** — `**Current version:** \`x.y.z\` | [link to upstream docs]()`. Omit the link for internal/meta features (e.g. `common-utils`) that have no meaningful upstream URL.
+- **`## Usage`** — bare JSON example first, then a "With options:" block for every feature that has any option (even if only `version`). The "With options" block shows the feature entry without the outer `"features": {}` wrapper, and should demonstrate the most useful non-default values.
+- **`## Options`** — table of all options.
+- **`## What's included`** — use when the feature installs multiple distinct components beyond binary + shell config: VS Code extensions, persistent volume mounts, generated config files. Use `## Shell integration` instead for features that only add aliases, env vars, or key bindings.
+- **Devbox dependency** — documented centrally in `features/_index.md` under "Dependency order". Individual feature pages do NOT repeat it.
+- **Config persistence** — only `claude` and `gemini` do the named-volume symlink pattern (`~/.claude`, `~/.gemini`). Other features do not need a config persistence section.
 
 ## Adding a new image doc
 
 1. Create `content/docs/devcontainers/images/<name>.md` — use the Dockerfile as the source of truth
 2. Set `weight` following the sequence above
 3. Update the image table in `content/docs/devcontainers/images/_index.md`
+
+### Image doc structure
+
+Follow this section order:
+
+- **Version line** — `**Current version:** \`x.y.z\`` (no external link).
+- **`## Usage`** — bare `latest` JSON example first, then a "Pin to a specific version:" block using the current version tag.
+- **`## What's included`** — bullet list or table of what this image adds on top of its parent.
+- **`## When to use this`** — all images except `-nf` variants (see below).
+- **`-nf` variants** — use `## Differences from <base>` (table) + `## Requirements` (Nerd Font setup instructions) instead of `## When to use this`.
+
+## Index page conventions
+
+Both `features/_index.md` and `images/_index.md` use `hide_child_list: true` in front matter to suppress the auto-generated Hugo child page list. The linked table in the content body serves as navigation instead. Any new section index page that provides its own navigation table should also set this.
+
+## Writing style
+
+- No emojis in content files
+- No em dashes (`--` or `—`) in content files; use commas, colons, or rewrite the sentence instead

@@ -20,6 +20,14 @@ topics: ["devcontainers"]
 }
 ```
 
+Pin to a specific version:
+
+```json
+{
+  "image": "ghcr.io/devopsbuildingblocks/devcontainer-images/ubuntu-toolbox:0.1.6"
+}
+```
+
 ## What's included
 
 Everything in [`ubuntu-devbox`](../ubuntu-devbox/), plus:

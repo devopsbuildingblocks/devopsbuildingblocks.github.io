@@ -20,6 +20,14 @@ topics: ["devcontainers"]
 }
 ```
 
+Pin to a specific version:
+
+```json
+{
+  "image": "ghcr.io/devopsbuildingblocks/devcontainer-images/rocky-toolbox-nf:0.1.6"
+}
+```
+
 ## Differences from rocky-toolbox
 
 | Setting | rocky-toolbox | rocky-toolbox-nf |
