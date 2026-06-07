@@ -38,12 +38,7 @@
     </article>
   </div>
   <aside class="docs-toc-col">
-    {{ if strings.Contains .TableOfContents "<li>" }}
-    <nav class="toc" aria-label="Table of contents">
-      <h2 class="toc-title">Contents</h2>
-      {{ .TableOfContents }}
-    </nav>
-    {{ end }}
+    {{ partial "toc.html" . }}
   </aside>
 </div>
 {{ end }}

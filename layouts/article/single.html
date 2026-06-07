@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="container container--article">
+<div class="article-outer">
   <article class="post post--article">
     <header class="post-header">
       <div class="post-header-meta">
@@ -14,5 +14,8 @@
       {{ .Content }}
     </div>
   </article>
+  <aside class="article-toc-col">
+    {{ partial "toc.html" . }}
+  </aside>
 </div>
 {{ end }}
