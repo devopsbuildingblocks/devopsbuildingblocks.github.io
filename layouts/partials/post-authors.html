@@ -4,8 +4,24 @@
     {{ $slug := . }}
     {{ with index hugo.Data.authors $slug }}
     <div class="post-author-item">
-      <img src="{{ .avatar }}" alt="{{ .name }}" class="post-author-avatar" title="{{ .name }}">
-      <span class="post-author-name">{{ .name }}</span>
+      <img src="{{ .avatar }}" alt="{{ .name }}" class="post-author-avatar">
+      <div class="post-author-meta">
+        <span class="post-author-label">Author</span>
+        <span class="post-author-name">{{ .name }}</span>
+        {{ with .bio }}<span class="post-author-bio">{{ . }}</span>{{ end }}
+        <div class="post-author-socials">
+          {{ with .github }}
+          <a href="{{ . }}" class="post-author-social-link" target="_blank" rel="noopener" aria-label="GitHub">
+            {{ partial "icons/github.html" $ }}
+          </a>
+          {{ end }}
+          {{ with .linkedin }}
+          <a href="{{ . }}" class="post-author-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+            {{ partial "icons/linkedin.html" $ }}
+          </a>
+          {{ end }}
+        </div>
+      </div>
     </div>
     {{ end }}
   {{ end }}
