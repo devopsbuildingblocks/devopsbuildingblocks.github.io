@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{ $author := index hugo.Data.authors "joshua-ward" }}
+<div class="container container--article">
+  <article class="post post--article">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{ if $author }}
+      <div class="about-profile">
+        <img src="{{ $author.avatar }}" alt="{{ $author.name }}" class="about-avatar">
+        <div class="about-profile-meta">
+          <span class="about-label">Author</span>
+          <span class="about-name">{{ $author.name }}</span>
+          {{ with $author.bio }}<span class="about-bio">{{ . }}</span>{{ end }}
+          <div class="about-socials">
+            {{ with $author.github }}
+            <a href="{{ . }}" class="about-social-link" target="_blank" rel="noopener" aria-label="GitHub">
+              {{ partial "icons/github.html" $ }}
+            </a>
+            {{ end }}
+            {{ with $author.linkedin }}
+            <a href="{{ . }}" class="about-social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              {{ partial "icons/linkedin.html" $ }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </header>
+    <div class="post-body">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}

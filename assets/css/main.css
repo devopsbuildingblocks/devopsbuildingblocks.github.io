@@ -316,7 +316,7 @@ tr:last-child td { border-bottom: none; }
   list-style: none;
 }
 
-.nav-links a {
+.nav-links a:not(.nav-icon-link) {
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 600;
@@ -328,7 +328,7 @@ tr:last-child td { border-bottom: none; }
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
 
-.nav-links a:hover {
+.nav-links a:not(.nav-icon-link):hover {
   color: var(--dark);
   background: var(--blue-light);
   text-decoration: none;
@@ -924,6 +924,34 @@ tr:last-child td { border-bottom: none; }
 /* Post body */
 .post-body { font-size: 1.05rem; }
 
+.social-links {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--border);
+  color: var(--mid);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  text-decoration: none;
+}
+.social-link:hover {
+  color: var(--dark);
+  border-color: var(--mid);
+  background: var(--surface);
+  text-decoration: none;
+}
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
 .post-body h2 {
   margin-top: var(--space-10);
   margin-bottom: var(--space-4);
@@ -998,6 +1026,75 @@ tr:last-child td { border-bottom: none; }
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--mid);
+}
+
+.about-profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.about-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: var(--border-thick) solid var(--red);
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.about-profile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.about-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.about-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.about-bio {
+  font-size: 0.95rem;
+  color: var(--mid);
+}
+
+.about-socials {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-1);
+}
+
+.about-social-link {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  transition: color 0.15s;
+  text-decoration: none;
+}
+
+.about-social-link:hover {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.about-social-link svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* --------------------------------------------------------------------------
@@ -1712,6 +1809,28 @@ details[open] > .docs-tree-section-label {
 /* --------------------------------------------------------------------------
   20b. Search Trigger Button
    -------------------------------------------------------------------------- */
+
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius);
+  color: var(--mid);
+  transition: color 0.15s, background 0.15s;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.nav-icon-link:hover {
+  color: var(--dark);
+  background: var(--blue-light);
+  text-decoration: none;
+}
+.nav-icon-link svg {
+  width: 16px;
+  height: 16px;
+}
 
 .search-trigger {
   display: flex;

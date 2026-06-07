@@ -12,6 +12,11 @@
         <li><a href="/topics/"{{ if hasPrefix .RelPermalink "/topics" }} aria-current="page"{{ end }}>Topics</a></li>
         <li><a href="/about/"{{ if eq .RelPermalink "/about/" }} aria-current="page"{{ end }}>About</a></li>
         <li>
+          <a href="https://github.com/devopsbuildingblocks" class="nav-icon-link" aria-label="DevOps Building Blocks on GitHub" target="_blank" rel="noopener">
+            {{ partial "icons/github.html" . }}
+          </a>
+        </li>
+        <li>
           <button class="search-trigger" aria-label="Search" onclick="document.getElementById('search-modal').showModal()">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           </button>
