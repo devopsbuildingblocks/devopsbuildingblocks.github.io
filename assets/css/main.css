@@ -233,6 +233,18 @@ tr:last-child td { border-bottom: none; }
   padding: var(--space-8) var(--space-6);
 }
 
+.article-outer {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+.article-toc-col {
+  display: none;
+}
+
 /* --------------------------------------------------------------------------
    5. Navigation
    -------------------------------------------------------------------------- */
@@ -908,12 +920,13 @@ tr:last-child td { border-bottom: none; }
   margin-top: var(--space-10);
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-2);
+  scroll-margin-top: calc(var(--nav-height) + var(--space-4));
 }
 .post--guide .post-body h2,
 .post--docs .post-body h2  { border-bottom: var(--border-width) solid var(--blue); }
 
-.post-body h3 { margin-top: var(--space-8);  margin-bottom: var(--space-3); }
-.post-body h4 { margin-top: var(--space-6);  margin-bottom: var(--space-2); }
+.post-body h3 { margin-top: var(--space-8);  margin-bottom: var(--space-3); scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
+.post-body h4 { margin-top: var(--space-6);  margin-bottom: var(--space-2); scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
 
 .post-body ul,
 .post-body ol {
@@ -2045,6 +2058,28 @@ details[open] > .docs-tree-section-label {
     top: calc(var(--nav-height) + var(--space-8));
     max-height: calc(100vh - var(--nav-height) - var(--space-16));
     overflow-y: auto;
+  }
+}
+
+/* Article: show right TOC column at wide viewports */
+@media (min-width: 1200px) {
+  .article-outer {
+    grid-template-columns: 1fr var(--docs-toc-w);
+    gap: var(--space-10);
+    max-width: calc(var(--max-width) + var(--docs-toc-w) + var(--space-10));
+  }
+  .article-outer .post--article {
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .article-toc-col {
+    display: block;
+    position: sticky;
+    top: var(--nav-height);
+    align-self: start;
+    max-height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+    padding-top: var(--space-8);
   }
 }
 
