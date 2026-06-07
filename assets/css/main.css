@@ -596,14 +596,16 @@ tr:last-child td { border-bottom: none; }
 .post-card--guide,
 .post-card--docs,
 .post-card--article,
-.post-card--til {
+.post-card--til,
+.post-card--topics {
   box-shadow: var(--shadow-card);
 }
 
 .post-card--guide:hover,
 .post-card--docs:hover,
 .post-card--article:hover,
-.post-card--til:hover {
+.post-card--til:hover,
+.post-card--topics:hover {
   transform: translate(-3px, -3px);
   box-shadow: var(--shadow-card-hover);
 }
@@ -646,6 +648,11 @@ tr:last-child td { border-bottom: none; }
   color: var(--dark);
 }
 
+.post-card--topics .post-card-type {
+  background: var(--muted);
+  color: var(--white);
+}
+
 .post-card-title {
   font-size: 1.1rem;
   line-height: 1.3;
@@ -659,6 +666,7 @@ tr:last-child td { border-bottom: none; }
 .post-card--docs .post-card-title a:hover    { color: var(--blue); }
 .post-card--article .post-card-title a:hover { color: var(--red); }
 .post-card--til .post-card-title a:hover     { color: var(--yellow-dark); }
+.post-card--topics .post-card-title a:hover  { color: var(--muted); }
 
 .post-card-desc {
   font-size: 0.9rem;
@@ -2037,6 +2045,7 @@ details[open] > .docs-tree-section-label {
 [data-theme="dark"] .post-card--docs .post-card-title a:hover { color: var(--blue); }
 [data-theme="dark"] .post-card--article .post-card-title a:hover { color: #f38ba8; }
 [data-theme="dark"] .post-card--til .post-card-title a:hover { color: var(--yellow); }
+[data-theme="dark"] .post-card--topics .post-card-title a:hover { color: var(--muted); }
 
 /* --- Hero CTA buttons: border is always dark — hero-bg doesn't change between modes --- */
 [data-theme="dark"] .cta { border-color: #1A1A1A; }
