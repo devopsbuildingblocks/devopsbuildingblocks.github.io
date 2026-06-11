@@ -22,6 +22,7 @@
   19.  Footer
   20.  Theme Toggle Button
   21.  Dark Mode
+  22.  Resume
   23.  Responsive Breakpoints
    ========================================================================== */
 
@@ -74,6 +75,10 @@
   --border-width: 2px;
   --border-thick: 4px;
   --border-radius: 4px;
+  --radius: var(--border-radius);
+
+  /* Surfaces — used for hover backgrounds on nav items, sidebar, social links */
+  --surface: #f5f5f5;
 
   /* Shadows — all cards and buttons use the same dark offset shadow */
   --shadow-card:       4px 4px 0 var(--dark);
@@ -2247,7 +2252,7 @@ details[open] > .docs-tree-section-label {
 
 
 /* --------------------------------------------------------------------------
-  24. Resume
+  22. Resume
    -------------------------------------------------------------------------- */
 
 .container--resume {
